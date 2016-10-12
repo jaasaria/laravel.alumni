@@ -1,0 +1,4 @@
+@extends('front.layout.page')
+
+
+

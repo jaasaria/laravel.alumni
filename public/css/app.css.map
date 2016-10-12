@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAIA;EACC,iBAAiB;EACjB,sBAAsB,EACtB","file":"app.css","sourcesContent":["// @import \"node_modules/bootstrap-sass/assets/stylesheets/bootstrap\";\n\n\n\n.samplecssfromgulp{\n\tmargin-top: 20px;\n\tbackground-color: red;\n}"],"sourceRoot":"/source/"}
