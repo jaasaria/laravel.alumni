@@ -71,4 +71,6 @@ Route::get('user/reset/{token?}', 'Auth\PasswordController@showResetForm');		//g
 Route::post('user/email', 'Auth\PasswordController@sendResetLinkEmail');		//send link
 Route::post('user/reset', 'Auth\PasswordController@reset');						//reset pass
 
+
+Route::get('/settings', ['uses' => 'PagesCtrl@settings','as' => 'settings']);
 Route::get('/help', ['uses' => 'PagesCtrl@help','as' => 'help']);

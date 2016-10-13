@@ -48,7 +48,7 @@
                     <li><a href="#"><i class="fa fa-circle-o"></i> Contact Form</a></li>
                 </ul>
             </li>
-           <li class="treeview {{ Request::is('notes','profile','help') ? 'active' : '' }}">
+           <li class="treeview {{ Request::is('profile','help','settings') ? 'active' : '' }}">
                 <a href="#">
                     <i class="fa fa-laptop"></i>
                     <span>Utilities</span>
@@ -59,6 +59,9 @@
                 <ul class="treeview-menu">
                     
                     <li class="{{ Request::is('profile') ? 'active' : '' }}"><a href="{{ url('profile') }}"><i class="fa fa-circle-o"></i> Profile</a></li>
+
+                    <li class="{{ Request::is('settings') ? 'active' : '' }}"><a href="{{ url('settings') }}"><i class="fa fa-circle-o"></i> Settings</a></li>
+
                     <li class="{{ Request::is('help') ? 'active' : '' }}"><a href="{{ url('help') }}"><i class="fa fa-circle-o"></i> Help</a></li>
                 </ul>
             </li>

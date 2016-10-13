@@ -16,7 +16,10 @@
     <link rel="stylesheet" href=" {{ URL::asset('dist/icons/font-awesome-4.6.3/css/font-awesome.min.css') }} ">
 
     <link rel="stylesheet" href=" {{ URL::asset('dist/css/AdminLTE.min.css') }} ">
+
+    
     <link rel="stylesheet" href=" {{ URL::asset('dist/css/skins/_all-skins.min.css') }} ">
+    {{-- <link rel="stylesheet" href=" {{ URL::asset('dist/css/skins/skin-green.min.css') }} "> --}}
 
     <link rel="stylesheet" href=" {{ URL::asset('dist/css/toastr.min.css') }} ">
 

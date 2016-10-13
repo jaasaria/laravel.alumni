@@ -38,6 +38,10 @@ class PagesCtrl extends Controller
     {
         return view('pages.home');
     }
+    public function settings()
+    {
+        return view('pages.settings');
+    }
     public function help()
     {
         return view('pages.help');
