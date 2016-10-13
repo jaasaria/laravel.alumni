@@ -7,6 +7,7 @@ Route::get('/about',['uses' => 'PagesCtrl@about','as' => 'front.about']);
 Route::get('/vision',['uses' => 'PagesCtrl@vision','as' => 'front.vision']);
 Route::get('/hymn',['uses' => 'PagesCtrl@hymn','as' => 'front.hymn']);
 Route::get('/academic',['uses' => 'PagesCtrl@academic','as' => 'front.academic']);
+Route::get('/contact',['uses' => 'PagesCtrl@contact','as' => 'front.contact']);
 
 
 

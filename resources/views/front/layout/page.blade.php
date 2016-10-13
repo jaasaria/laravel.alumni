@@ -10,7 +10,10 @@
     <title>
         Home
     </title>
-    
+
+
+    <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/css/frontend/contact.css">
+
     <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/css/lib.css">
     <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/css/frontend/tabbular.css">
     <link href="http://joshadmin.com/assets/vendors/animate/animate.min.css" rel="stylesheet" type="text/css"/>
@@ -18,10 +21,23 @@
     <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/vendors/owl.carousel/css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/vendors/owl.carousel/css/owl.theme.css">
 
+
+    @yield('css')
+
 </head>
 
 
 <body>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=428327057312234";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 
     <header>
         @include('front.layout.header')
@@ -49,6 +65,8 @@
     <script type="text/javascript" src="http://joshadmin.com/assets/js/frontend/carousel.js"></script>
     <script type="text/javascript" src="http://joshadmin.com/assets/js/frontend/index.js"></script>
 
+    @yield('js')
+
     <!-- end page level js -->
     <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -58,6 +76,8 @@
           ga('create', 'UA-53569782-1', 'auto');
           ga('send', 'pageview');
     </script>
+
+    
 
 </body>
 

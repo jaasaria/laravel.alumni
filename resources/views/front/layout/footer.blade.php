@@ -8,7 +8,7 @@
                      Interface Computer College then known as Interface Computer Learning Center was established in 1982 at the 2nd floor of Cartimar building along Claro M. Recto Avenue in Quiapo Manila. It then became a college in 1994 when IT-related programs were added to its already existing wide-range portfolio of short-term courses. 
                 </p>
                 <div class="form-group">
-                    <a href="{{ route('front.about') }}" class="btn btn-primary text-white" role="button"> More </a>
+                    <a href="{{ route('front.about') }}" class="btn btn-primary text-white" role="button"> More Info </a>
                 </div>
             </div>
             <!-- //About us Section End -->
@@ -19,6 +19,8 @@
              </div>
             <div class="col-sm-3">
                 <h4>Contact Us</h4>
+
+
                 <ul class="list-unstyled">
                     <li>Valiant Building Mabini Street </li>
                     <li>Iloilo City, Philippines</li>
@@ -32,6 +34,9 @@
                         <span class="text-success"  style="cursor: pointer;">icc-iloilo</span>
                     </li>
                 </ul>
+
+
+
             </div>
             <!-- //Contact Section End -->
 
@@ -61,6 +66,9 @@
                         </a>
                     </li>
                 </ul>
+
+                   {{-- facebook like button --}}
+                  <div class="fb-page" data-href="https://www.facebook.com/Interface-Computer-College-Iloilo-City-856751671058684/" data-width="370" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Interface-Computer-College-Iloilo-City-856751671058684/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Interface-Computer-College-Iloilo-City-856751671058684/">Interface Computer College - Iloilo City</a></blockquote></div>
             </div>
             <!-- //Recent Post Section End -->
         </div>

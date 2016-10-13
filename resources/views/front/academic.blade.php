@@ -26,13 +26,14 @@
 
         </div>
     </div>
-
 @stop
+
 
 
 @section('content')
 
     <div class="row">
+
             <div class="text-center">
                 <h3 class="border-success"><span class="heading_border bg-success" >Academic</span></h3>
             </div>
@@ -60,7 +61,6 @@
                 </div>
                 <!-- //Responsive Section End -->
 
-
                 <!-- Easy to Use Section Start -->
                 <div class="col-sm-3 col-md-3 wow zoomIn" data-wow-duration="3s">
                     <div class="box">
@@ -76,11 +76,6 @@
                     </div>
                 </div>
                 <!-- //Easy to use Section End -->
-
-
-
-
-
 
                 <!-- Responsive Section Start -->
                 <div class="col-sm-3 col-md-3 wow zoomIn" data-wow-duration="3s">
@@ -98,12 +93,7 @@
                 </div>
                 <!-- //Responsive Section End -->
 
-
-
-
-
-
-   <!-- Easy to Use Section Start -->
+                <!-- Easy to Use Section Start -->
                 <div class="col-sm-3 col-md-3 wow zoomIn" data-wow-duration="3s">
                     <div class="box">
                         <div class="box-icon box-icon1">
@@ -118,12 +108,6 @@
                     </div>
                 </div>
                 <!-- //Easy to use Section End -->
-
-
-
-
-
-
 
 
                 <!-- Responsive Section Start -->
@@ -141,24 +125,11 @@
                     </div>
                 </div>
                 <!-- //Responsive Section End -->
-
-
-
-
-
-
             </div>
-            <!-- Left Section End -->
+            {{-- end of col md 12 --}}
 
-
-
-
-
-
-        </div>
-
-
-
+    </div>
+    {{-- end of div row --}}
 
 @stop
 

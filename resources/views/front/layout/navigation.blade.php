@@ -33,14 +33,12 @@
 
                     <li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown"> News</a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="http://joshadmin.com/news">Interface Activities</a></li>
-                            <li><a href="http://joshadmin.com/news_item">Interface Jobs</a></li>
+                            <li><a href="#s">Interface Activities</a></li>
+                            <li><a href="#">Interface Jobs</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="{{ route('front.home') }}"> Contact</a></li>
-
-
+                    <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="{{ route('front.contact') }}"> Contact</a></li>
                     <li><a href="{{ route('user.login') }}">Login</a></li>
                     
                 </ul>
