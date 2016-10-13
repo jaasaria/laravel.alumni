@@ -32,8 +32,6 @@
 
 @section('content')
 
-
-
     <div class="row">
 
             <div class="text-center">

@@ -12,6 +12,7 @@
     </title>
 
 
+
     <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/css/frontend/contact.css">
 
     <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/css/lib.css">
@@ -54,6 +55,7 @@
 
         @include('front.layout.footer')
         @include('front.layout.copyright')
+
 
 
 

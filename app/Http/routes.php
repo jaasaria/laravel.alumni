@@ -58,7 +58,9 @@ Route::get('/admin',   ['middleware' => 'auth','uses' => 'PagesCtrl@admin','as' 
 // Authentication Routes...
 Route::get('user/login', ['uses'=>'Auth\AuthController@showLoginForm','as' => 'user.login'] );
 Route::post('user/login', 'Auth\AuthController@login');
-Route::get('user/logout', 'Auth\AuthController@logout');
+Route::get('user/logout', ['uses'=>'Auth\AuthController@logout','as' => 'user.signout']);
+
+
 
 // Registration Routes...
 Route::post('user/register', 'Auth\AuthController@register');

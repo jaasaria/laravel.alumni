@@ -39,7 +39,7 @@
                     </li>
 
                     <li class="{{ Request::is('contact') ? 'active' : '' }}"><a href="{{ route('front.contact') }}"> Contact</a></li>
-                    <li><a href="{{ route('user.login') }}">Login</a></li>
+
                     
                 </ul>
             </div>
