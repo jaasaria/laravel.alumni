@@ -30,10 +30,11 @@
 
 
         @yield('slider')
+        @yield('breadcrumbs')
 
-        <section class="content">
+        <div class="container">
             @yield('content')
-        </section>
+        </div>
 
         @include('front.layout.footer')
         @include('front.layout.copyright')

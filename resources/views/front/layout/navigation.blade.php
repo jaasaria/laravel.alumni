@@ -13,19 +13,23 @@
                 <ul class="nav navbar-nav navbar-right">     <!--navbar-right-->
 
 
-                    <li class="active"><a href="{{ route('front.home') }}"> Home</a></li>
+                    <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ route('front.home') }}"> Home</a></li>
 
-                    <li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown"> About</a>
+                    <li class="dropdown {{ Request::is('about','vision','hymn') ? 'active' : '' }} "><a href="#" class="dropdown-toggle" data-toggle="dropdown"> About</a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="http://joshadmin.com/news">About Interface College</a></li>
-                            <li><a href="http://joshadmin.com/news_item">Vision and Mission</a></li>
-                            <li><a href="http://joshadmin.com/news_item">Interface Hymn</a></li>
-                            <li><a href="http://joshadmin.com/news_item">History</a></li>
+
+                            <li class="{{ Request::is('about') ? 'active' : '' }}"><a href="{{ route('front.about') }}">About Interface College</a></li>
+
+                            <li class="{{ Request::is('vision') ? 'active' : '' }}"><a href="{{ route('front.vision') }}">Vision and Mission</a></li>
+
+                            <li class="{{ Request::is('hymn') ? 'active' : '' }}"><a href="{{ route('front.hymn') }}">Interface Hymn</a></li>
+
                         </ul>
                     </li>
 
 
-                    <li><a href="{{ route('front.home') }}"> Academic</a></li>
+                    <li class="{{ Request::is('academic') ? 'active' : '' }}"><a href="{{ route('front.academic') }}"> Academic</a></li>
+
 
                     <li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown"> News</a>
                         <ul class="dropdown-menu" role="menu">

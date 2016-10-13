@@ -54,6 +54,19 @@ class PagesCtrl extends Controller
     {
         return view('front.about.about');
     }
+    public function vision()
+    {
+        return view('front.about.visionmission');
+    }
+    public function hymn()
+    {
+        return view('front.about.hymn');
+    }
+    public function academic()
+    {
+        return view('front.academic');
+    }
+
 
 
 
