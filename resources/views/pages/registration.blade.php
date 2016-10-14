@@ -48,7 +48,7 @@
             {!! Form::close() !!}
 
             <div class="loginlink">
-                  <a href="{{ url('/') }}">Return to Log-In?</a><br>
+                  <a href="{{ route('user.login') }}">Return to Log-In?</a><br>
             </div>
 
            

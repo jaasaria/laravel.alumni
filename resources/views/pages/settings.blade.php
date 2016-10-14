@@ -20,6 +20,9 @@
           <h4 class="control-sidebar-heading"><h3>Skins</h3>
           </h4>
           <ul class="list-unstyled clearfix">
+
+
+
             <li style="float:left; width: 33.33333%; padding: 5px;">
               <a href="javascript:void(0);" data-skin="skin-blue" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
                 <div>
@@ -74,12 +77,14 @@
               <p class="text-center no-margin">Purple
               </p>
             </li>
+
+
             <li style="float:left; width: 33.33333%; padding: 5px;">
               <a href="javascript:void(0);" data-skin="skin-green" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
                 <div>
                   <span style="display:block; width: 20%; float: left; height: 7px;" class="bg-green-active">
                   </span>
-                  <span class="bg-green" style="display:block; width: 80%; float: left; height: 7px;">
+                  <span class="bg-green" style="display:block; width: 80%; float: left; height: 7px;">tes
                   </span>
                 </div>
                 <div>
@@ -92,6 +97,10 @@
               <p class="text-center no-margin">Green
               </p>
             </li>
+
+
+
+
             <li style="float:left; width: 33.33333%; padding: 5px;">
               <a href="javascript:void(0);" data-skin="skin-red" style="display: block; box-shadow: 0 0 3px rgba(0,0,0,0.4)" class="clearfix full-opacity-hover">
                 <div>

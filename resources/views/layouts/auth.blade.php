@@ -20,7 +20,7 @@
                height:60px;
                border-top: 0;
                width:100%;
-               background: url({{ URL::asset('img/logo.png') }}) ; 
+               background: url({{ asset('img/logo.png') }}) ; 
             }
             .login-box {
                 width: 360px;
@@ -47,7 +47,7 @@
             }
 
             body {
-                background: url({{ URL::asset('img/bg-login.jpg') }}) no-repeat center center fixed; 
+                background: url({{ asset('img/bg-login.jpg') }}) no-repeat center center fixed; 
                   -webkit-background-size: cover;
                   -moz-background-size: cover;
                   -o-background-size: cover;

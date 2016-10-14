@@ -10,9 +10,7 @@
         "laravelcollective/html": "^5.2",
         "yajra/laravel-datatables-oracle": "^6.16",
         "intervention/image": "^2.3",
-        "nesbot/carbon": "^1.21",
-        "kordy/ticketit": "0.*"
-
+        "nesbot/carbon": "^1.21"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
