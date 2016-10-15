@@ -13,7 +13,7 @@
                 </li>
                 <li class="hidden-xs">
                     <i class="livicon icon3" data-name="angle-double-right" data-size="18" data-loop="true" data-c="#01bc8c" data-hc="#01bc8c"></i>
-                    <a href=" {{ url('list_jobs') }}">Jobs</a>
+                    <a href=" {{ url('list_activity') }}">Activities and Events</a>
                 </li>
                  <li class="hidden-xs">
                     <i class="livicon icon3" data-name="angle-double-right" data-size="18" data-loop="true" data-c="#01bc8c" data-hc="#01bc8c"></i>
@@ -32,12 +32,11 @@
 
 
 
-
 @section('content')
     <div class="row">
 
             <div class="text-center">
-                <h3 class="border-success"><span class="heading_border bg-success" >Jobs</span></h3>
+                <h3 class="border-success"><span class="heading_border bg-success" >Activities and Events</span></h3>
             </div>
 
 
@@ -57,7 +56,7 @@
                                     </p>
                                 <p class="additional-post-wrap">
                                     <span class="additional-post">
-                                        <i class="livicon" data-name="user" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i> By&nbsp; {{ $data->username->name }}
+                                        <i class="livicon" data-name="user" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i> By&nbsp; {{ $data->user->name }}
                                     </span>
 
                                     <span class="additional-post">
@@ -82,6 +81,8 @@
 
 
     <br><br><br>
+
+
 @stop
 
 

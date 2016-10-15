@@ -33,9 +33,11 @@
 
                     <li class="dropdown "><a href="#" class="dropdown-toggle" data-toggle="dropdown"> News</a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Interface Activities</a></li>
 
-                            <li class="{{ Request::is('jobs') ? 'active' : '' }}"><a href="{{ url('/list_jobs') }}">Interface Jobs</a></li>
+
+                            <li class="{{ Request::is('list_activity') ? 'active' : '' }}"><a href="{{ url('/list_activity')}}">Interface Activities</a></li>
+
+                            <li class="{{ Request::is('list_jobs') ? 'active' : '' }}"><a href="{{ url('/list_jobs') }}">Interface Jobs</a></li>
 
                         </ul>
                     </li>

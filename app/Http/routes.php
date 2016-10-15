@@ -12,6 +12,23 @@ Route::get('/contact',['uses' => 'PagesCtrl@contact','as' => 'front.contact']);
 Route::get('/list_jobs',['uses' => 'JobsCtrl@list_jobs','as' => 'front.list_jobs']);
 Route::get('/list_jobs/show/{id}', ['uses' => 'JobsCtrl@show','as' => 'front.show']);
 
+Route::get('/list_activity',['uses' => 'ActivityCtrl@list_activity','as' => 'front.list_activity']);
+Route::get('/list_activity/show/{id}', ['uses' => 'ActivityCtrl@show','as' => 'front.activity.show']);
+
+
+
+// Activity
+Route::group(['middleware' => 'auth','prefix' => 'activity'],function(){
+	Route::get('/', ['uses' => 'ActivityCtrl@index','as' => 'activity.list']);
+	Route::get('/create', ['uses' => 'ActivityCtrl@create','as' => 'activity.create']);
+	Route::post('/store', ['uses' => 'ActivityCtrl@store','as' => 'activity.store']);
+	Route::get('/edit/{id}', ['uses' => 'ActivityCtrl@edit','as' => 'activity.edit']);
+	Route::post('/update/{id}', ['uses' => 'ActivityCtrl@update','as' => 'activity.update']);
+	Route::get('/destroy/{id}', ['uses' => 'ActivityCtrl@destroy','as' => 'activity.destroy']);
+	Route::delete('/delete', ['uses' => 'ActivityCtrl@delete','as' => 'activity.delete']);
+	Route::get('/data', ['uses' => 'ActivityCtrl@getdata','as' => 'activity.data']);
+});
+
 
 
 // Jobs

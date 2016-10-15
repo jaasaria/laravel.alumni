@@ -21,6 +21,9 @@ class Users extends Model
 
 	public function jobs(){
 		return $this->hasMany(Jobs::class,'user_id');
+	}	
+	public function activity(){
+		return $this->hasMany(Activity::class,'user_id');
 	}
 
 	public function notes(){
