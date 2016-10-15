@@ -8,20 +8,17 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" href=" {{ URL::asset('bootstrap/css/bootstrap.min.css') }} ">
-    <link rel="stylesheet" href=" {{ URL::asset('plugins/datatables/dataTables.bootstrap.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('bootstrap/css/bootstrap.min.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('plugins/datatables/dataTables.bootstrap.css') }} ">
 
-    <link rel="stylesheet" href=" {{ URL::asset('dist/sweetalert/sweetalert.css') }} ">
-    <link rel="stylesheet" href=" {{ URL::asset('dist/icons/ionicons.min.css') }} ">
-    <link rel="stylesheet" href=" {{ URL::asset('dist/icons/font-awesome-4.6.3/css/font-awesome.min.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('dist/sweetalert/sweetalert.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('dist/icons/ionicons.min.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('dist/icons/font-awesome-4.6.3/css/font-awesome.min.css') }} ">
 
-    <link rel="stylesheet" href=" {{ URL::asset('dist/css/AdminLTE.min.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('dist/css/AdminLTE.min.css') }} ">
 
-    
-    <link rel="stylesheet" href=" {{ URL::asset('dist/css/skins/_all-skins.min.css') }} ">
-    {{-- <link rel="stylesheet" href=" {{ URL::asset('dist/css/skins/skin-green.min.css') }} "> --}}
-
-    <link rel="stylesheet" href=" {{ URL::asset('dist/css/toastr.min.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('dist/css/skins/_all-skins.min.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('dist/css/toastr.min.css') }} ">
 
     
     @yield('css.import')
@@ -72,24 +69,24 @@
 
 {{-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> --}}
 
-<script src=" {{ URL::asset('js/jquery.min.js') }} "></script>
+<script src=" {{ asset('js/jquery.min.js') }} "></script>
 
-<script src=" {{ URL::asset('bootstrap/js/bootstrap.min.js') }} "></script>
-<script src=" {{ URL::asset('plugins/slimScroll/jquery.slimscroll.min.js') }} "></script>
-<script src=" {{ URL::asset('plugins/fastclick/fastclick.js') }} "></script>
+<script src=" {{ asset('bootstrap/js/bootstrap.min.js') }} "></script>
+<script src=" {{ asset('plugins/slimScroll/jquery.slimscroll.min.js') }} "></script>
+<script src=" {{ asset('plugins/fastclick/fastclick.js') }} "></script>
 
-<script src=" {{ URL::asset('dist/js/app.min.js') }} "></script>
-<script src=" {{ URL::asset('dist/js/demo.js') }} "></script>
+<script src=" {{ asset('dist/js/app.min.js') }} "></script>
+<script src=" {{ asset('dist/js/demo.js') }} "></script>
 
 
 
 
 {{-- under public folder --}}
-<script src=" {{ URL::asset('plugins/datatables/jquery.dataTables.min.js') }} "></script>
-<script src=" {{ URL::asset('plugins/datatables/dataTables.bootstrap.min.js') }} "></script>
+<script src=" {{ asset('plugins/datatables/jquery.dataTables.min.js') }} "></script>
+<script src=" {{ asset('plugins/datatables/dataTables.bootstrap.min.js') }} "></script>
 
-<script src=" {{ url::asset('dist/sweetalert/sweetalert.min.js') }} "></script>
-<script src=" {{ url::asset('dist/js/toastr.min.js') }} "></script>
+<script src=" {{ asset('dist/sweetalert/sweetalert.min.js') }} "></script>
+<script src=" {{ asset('dist/js/toastr.min.js') }} "></script>
 
 @yield('jsscript')     
 @stack('scripts')

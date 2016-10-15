@@ -11,20 +11,16 @@
         Home
     </title>
 
+    <link rel="stylesheet" type="text/css" href=" {{ asset('dist/josh/contact.css') }}">
+    <link rel="stylesheet" type="text/css" href=" {{ asset('dist/josh/lib.css') }}">
+    <link rel="stylesheet" type="text/css" href=" {{ asset('dist/josh/tabbular.css') }}">
+    <link rel="stylesheet" type="text/css" href=" {{ asset('dist/josh/animate.min.css') }}">
+    <link rel="stylesheet" type="text/css" href=" {{ asset('dist/josh/jquery.circliful.css') }}">
 
-
-    <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/css/frontend/contact.css">
-
-    <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/css/lib.css">
-    <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/css/frontend/tabbular.css">
-    <link href="http://joshadmin.com/assets/vendors/animate/animate.min.css" rel="stylesheet" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/css/frontend/jquery.circliful.css">
-    <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/vendors/owl.carousel/css/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/vendors/owl.carousel/css/owl.theme.css">
-
-    <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/css/frontend/blog.css">
+    <link rel="stylesheet" type="text/css" href=" {{ asset('dist/josh/owl.carousel.css') }}">
+    <link rel="stylesheet" type="text/css" href=" {{ asset('dist/josh/owl.theme.css') }}">
+    <link rel="stylesheet" type="text/css" href=" {{ asset('dist/josh/blog.css') }}">
     
-
 
     @yield('css')
 
@@ -60,29 +56,16 @@
         @include('front.layout.copyright')
 
 
-
-
-    <script type="text/javascript" src="http://joshadmin.com/assets/js/frontend/lib.js"></script>
-    <script src="http://joshadmin.com/assets/js/frontend/style-switcher.js" type="text/javascript"></script>
-    <script type="text/javascript" src="http://joshadmin.com/assets/js/frontend/jquery.circliful.js"></script>
-    <script src="http://joshadmin.com/assets/vendors/wow/js/wow.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="http://joshadmin.com/assets/vendors/owl.carousel/js/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="http://joshadmin.com/assets/js/frontend/carousel.js"></script>
-    <script type="text/javascript" src="http://joshadmin.com/assets/js/frontend/index.js"></script>
+    <script type="text/javascript" src=" {{ asset('dist/josh/js/lib.js') }}"></script>
+    <script type="text/javascript" src=" {{ asset('dist/josh/js/style-switcher.js') }}"></script>
+    <script type="text/javascript" src=" {{ asset('dist/josh/js/jquery.circliful.js') }}"></script>
+    <script type="text/javascript" src=" {{ asset('dist/josh/js/wow.min.js') }}"></script>
+    <script type="text/javascript" src=" {{ asset('dist/josh/js/owl.carousel.min.js') }}"></script>
+    <script type="text/javascript" src=" {{ asset('dist/josh/js/carousel.js') }}"></script>
+    <script type="text/javascript" src=" {{ asset('dist/josh/js/index.js') }}"></script>
 
     @yield('js')
 
-    <!-- end page level js -->
-    <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-          ga('create', 'UA-53569782-1', 'auto');
-          ga('send', 'pageview');
-    </script>
-
-    
 
 </body>
 

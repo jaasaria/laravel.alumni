@@ -87,17 +87,7 @@
 
         @yield('content')
 
-       
-
     </div>
-
-{{-- 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
-<script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
-<script src="{{ asset('dist/js/app.min.js') }}"></script>
-<script src="{{ asset('dist/js/demo.js') }}"></script> --}}
 
 
 @yield('jsscript')     

@@ -43,7 +43,7 @@
 										</div>
 									</div>
 
-									{!! Form::submit('Update Avatar', ['class' => 'btn btn-primary btn-block']) !!}
+									{!! Form::submit('Update Avatar', ['class' => 'btn btn-success btn-block']) !!}
 
 								{!! Form::close() !!}
 
