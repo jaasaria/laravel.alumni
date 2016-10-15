@@ -70,8 +70,7 @@ class PagesCtrl extends Controller
     {
         return view('front.academic');
     }
-    public function contact()
-    {
+    public function contact(){
         return view('front.contact');
     }
 

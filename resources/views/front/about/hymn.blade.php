@@ -39,6 +39,8 @@
                 <h3 class="border-success"><span class="heading_border bg-success">Interface Hymn</span></h3>
             </div>
             <!-- left Section Start -->
+
+            <div class="col-sm-12  col-md-12 wow zoomIn" data-wow-duration="3s">
             <div class="col-md-12 col-sm-12 text-center">
 
 
@@ -81,8 +83,14 @@
                             <br><br><br>
                         </ul>
                     </h4>
-            
             </div>
+
+            </div>
+                        
+                    
+
+
+            
 
 
 

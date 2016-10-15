@@ -10,7 +10,7 @@
             <ol class="breadcrumb">
 
                 <li>
-                    <a href="http://joshadmin.com"> <i class="livicon icon3 icon4" data-name="home" data-size="18" data-loop="true" data-c="#3d3d3d" data-hc="#3d3d3d"></i>Dashboard
+                    <a href=""> <i class="livicon icon3 icon4" data-name="home" data-size="18" data-loop="true" data-c="#3d3d3d" data-hc="#3d3d3d"></i>Dashboard
                     </a>
                 </li>
                 <li class="hidden-xs">
@@ -50,6 +50,8 @@
                 <div class="col-sm-4   col-md-4 wow zoomIn" data-wow-duration="3s" >
                  
                     <div class="media media-right">
+
+
                         <div class="media-left media-top">
                             <a href="#">
                                 <div class="box-icon">
@@ -58,7 +60,7 @@
                             </a>
                         </div>
                         <div class="media-body">
-                            <h4 class="media-heading">Address:</h4>
+                            <h3 class="media-heading">Address:</h3>
                             {{-- <div class="danger">Jyostna</div> --}}
                             <address>
                                 Valiant Building Mabini Street
@@ -66,6 +68,8 @@
                             </address>
                         </div>
                     </div>
+                    <br>
+
 
                     <div class="media padleft10">
                         <div class="media-left media-top">
@@ -77,7 +81,7 @@
                         </div>
                         <div class="media-body padbtm2">
 
-                            <h4 class="media-heading">Telephone:</h4>
+                            <h3 class="media-heading">Telephone:</h3>
                             <ul style="list-style: none;">
                                 <li><i class="livicon icon4 icon3" data-name="cellphone" data-size="18" data-loop="true" data-c="#ccc" data-hc="#ccc"></i>Phone:(033) 337-7784</li>
                                 <li><i class="livicon icon4 icon3" data-name="printer" data-size="18" data-loop="true" data-c="#ccc" data-hc="#ccc"></i> Fax:(033)111-2222</li>

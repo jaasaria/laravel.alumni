@@ -22,6 +22,9 @@
     <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/vendors/owl.carousel/css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/vendors/owl.carousel/css/owl.theme.css">
 
+    <link rel="stylesheet" type="text/css" href="http://joshadmin.com/assets/css/frontend/blog.css">
+    
+
 
     @yield('css')
 

@@ -30,9 +30,9 @@
 
             {{-- <li class="{{ Request::is('tickets','index') ? 'active' : '' }}"><a href="{{ route('ticket.index') }}"><i class="fa fa-ticket"></i> Activity Listing</a></li> --}}
 
-            <li class="{{ Request::is('notes','index') ? 'active' : '' }}"><a href="{{ url('notes') }}"><i class="fa fa-ticket"></i> Activity Listing</a></li>
+            <li class="{{ Request::is('activity') ? 'active' : '' }}"><a href="{{ url('notes') }}"><i class="fa fa-ticket"></i> Activity Listing</a></li>
 
-            <li class="{{ Request::is('notes','index') ? 'active' : '' }}"><a href="{{ url('notes') }}"><i class="fa fa-briefcase"></i> Job Listing</a></li>
+            <li class="{{ Request::is('jobs') ? 'active' : '' }}"><a href="{{ url('jobs') }}"><i class="fa fa-briefcase"></i> Job Listing</a></li>
 
 
             <li class="treeview">

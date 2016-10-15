@@ -19,6 +19,9 @@ class Users extends Model
 		return $this->hasMany(UserLog::class,'user_id');
 	}
 
+	public function jobs(){
+		return $this->hasMany(Jobs::class,'user_id');
+	}
 
 	public function notes(){
 		return $this->hasMany(Note::class,'user_id');

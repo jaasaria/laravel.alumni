@@ -8,10 +8,10 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="stylesheet" href=" {{ URL::asset('bootstrap/css/bootstrap.min.css') }} ">
-    <link rel="stylesheet" href=" {{ URL::asset('dist/icons/ionicons.min.css') }} ">
-    <link rel="stylesheet" href=" {{ URL::asset('dist/icons/font-awesome-4.6.3/css/font-awesome.min.css') }} ">
-    <link rel="stylesheet" href=" {{ URL::asset('dist/css/AdminLTE.min.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('bootstrap/css/bootstrap.min.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('dist/icons/ionicons.min.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('dist/icons/font-awesome-4.6.3/css/font-awesome.min.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('dist/css/AdminLTE.min.css') }} ">
 
 
     <style type="text/css">      
@@ -91,17 +91,13 @@
 
     </div>
 
-
-
-
+{{-- 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
-<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<script src="../../plugins/fastclick/fastclick.js"></script>
-
-{{-- admin lte sources --}}
-<script src="../../dist/js/app.min.js"></script>
-<script src="../../dist/js/demo.js"></script>
+<script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
+<script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
+<script src="{{ asset('dist/js/app.min.js') }}"></script>
+<script src="{{ asset('dist/js/demo.js') }}"></script> --}}
 
 
 @yield('jsscript')     

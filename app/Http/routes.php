@@ -9,21 +9,24 @@ Route::get('/hymn',['uses' => 'PagesCtrl@hymn','as' => 'front.hymn']);
 Route::get('/academic',['uses' => 'PagesCtrl@academic','as' => 'front.academic']);
 Route::get('/contact',['uses' => 'PagesCtrl@contact','as' => 'front.contact']);
 
+Route::get('/list_jobs',['uses' => 'JobsCtrl@list_jobs','as' => 'front.list_jobs']);
+Route::get('/list_jobs/show/{id}', ['uses' => 'JobsCtrl@show','as' => 'front.show']);
 
 
 
-
-//TICKET
-Route::group(['middleware' => 'auth','prefix' => 'tickets'],function(){
-	Route::get('/', ['uses' => 'TicketCtrl@index','as' => 'ticket.index']);
-	Route::get('/create', ['uses' => 'TicketCtrl@create','as' => 'ticket.create']);
-	Route::get('/read/{id}', ['uses' => 'TicketCtrl@read','as' => 'ticket.read']);
-
-	Route::post('/store', ['uses' => 'TicketCtrl@store','as' => 'ticket.store']);
-	Route::post('/reply/{id}', ['uses' => 'TicketCtrl@StoreReply','as' => 'ticket.reply']);
-	Route::get('/get_all_data', ['uses' => 'TicketCtrl@get_all_data','as' => 'tickets.get_all_data']); //json format 
-	// - use only for fetching note data
+// Jobs
+Route::group(['middleware' => 'auth','prefix' => 'jobs'],function(){
+	Route::get('/', ['uses' => 'JobsCtrl@index','as' => 'jobs.list']);
+	Route::get('/create', ['uses' => 'JobsCtrl@create','as' => 'jobs.create']);
+	Route::post('/store', ['uses' => 'JobsCtrl@store','as' => 'jobs.store']);
+	Route::get('/edit/{id}', ['uses' => 'JobsCtrl@edit','as' => 'jobs.edit']);
+	Route::post('/update/{id}', ['uses' => 'JobsCtrl@update','as' => 'jobs.update']);
+	Route::get('/destroy/{id}', ['uses' => 'JobsCtrl@destroy','as' => 'jobs.destroy']);
+	Route::delete('/delete', ['uses' => 'JobsCtrl@delete','as' => 'jobs.delete']);
+	Route::get('/get_all_data', ['uses' => 'JobsCtrl@get_all_data','as' => 'jobs.data']);
 });
+
+
 
 
 //PROFILE
