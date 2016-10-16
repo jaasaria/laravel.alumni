@@ -45,6 +45,7 @@
 
 									{!! Form::submit('Update Avatar', ['class' => 'btn btn-success btn-block']) !!}
 
+
 								{!! Form::close() !!}
 
 								<div class="row" style="margin-top: 5px;">
@@ -63,8 +64,6 @@
                 	</div>
               	</div>
             </div>	{{-- end of first 3column --}}
-
-
 
 
 

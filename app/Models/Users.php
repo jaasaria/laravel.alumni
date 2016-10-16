@@ -25,6 +25,9 @@ class Users extends Model
 	public function activity(){
 		return $this->hasMany(Activity::class,'user_id');
 	}
+	public function request(){
+		return $this->hasMany(RequestDocu::class,'user_id');
+	}
 
 	public function notes(){
 		return $this->hasMany(Note::class,'user_id');

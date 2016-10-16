@@ -8,6 +8,10 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
+
+
+
     <link rel="stylesheet" href=" {{ asset('bootstrap/css/bootstrap.min.css') }} ">
     <link rel="stylesheet" href=" {{ asset('plugins/datatables/dataTables.bootstrap.css') }} ">
 
@@ -19,6 +23,10 @@
 
     <link rel="stylesheet" href=" {{ asset('dist/css/skins/_all-skins.min.css') }} ">
     <link rel="stylesheet" href=" {{ asset('dist/css/toastr.min.css') }} ">
+
+
+
+ <link rel="stylesheet" href=" {{ asset('dist/css/bootstrap-select.min.css') }} ">
 
     
     @yield('css.import')
@@ -87,6 +95,10 @@
 
 <script src=" {{ asset('dist/sweetalert/sweetalert.min.js') }} "></script>
 <script src=" {{ asset('dist/js/toastr.min.js') }} "></script>
+
+
+<script src=" {{ asset('dist/js/bootstrap-select.min.js') }}"></script>
+
 
 @yield('jsscript')     
 @stack('scripts')

@@ -17,6 +17,21 @@ Route::get('/list_activity/show/{id}', ['uses' => 'ActivityCtrl@show','as' => 'f
 
 
 
+// Request
+Route::group(['middleware' => 'auth','prefix' => 'request'],function(){
+	Route::get('/', ['uses' => 'RequestCtrl@index','as' => 'request.list']);
+	Route::get('/create', ['uses' => 'RequestCtrl@create','as' => 'request.create']);
+	Route::post('/store', ['uses' => 'RequestCtrl@store','as' => 'request.store']);
+	Route::get('/edit/{id}', ['uses' => 'RequestCtrl@edit','as' => 'request.edit']);
+	Route::post('/update/{id}', ['uses' => 'RequestCtrl@update','as' => 'request.update']);
+	Route::get('/destroy/{id}', ['uses' => 'RequestCtrl@destroy','as' => 'request.destroy']);
+	Route::delete('/delete', ['uses' => 'RequestCtrl@delete','as' => 'request.delete']);
+	Route::get('/data', ['uses' => 'RequestCtrl@getdata','as' => 'request.data']);
+});
+
+
+
+
 // Activity
 Route::group(['middleware' => 'auth','prefix' => 'activity'],function(){
 	Route::get('/', ['uses' => 'ActivityCtrl@index','as' => 'activity.list']);

@@ -4,7 +4,7 @@ namespace iloilofinest\Http\Controllers;
 
 use Illuminate\Http\Request;
 use iloilofinest\Models\Users;
-use iloilofinest\Models\Activity;
+use iloilofinest\Models\RequestDocu;
 
 use Auth;
 use DB;
@@ -13,27 +13,27 @@ use iloilofinest\Http\Requests;
 use Yajra\Datatables\Datatables;
 use Carbon\Carbon;
 
-class ActivityCtrl extends Controller
+class RequestCtrl extends Controller
 {
 
     public function index()
     {
-        return view('activity.list');
+        return view('request.list');
     }
 
     public function create()
     {
-        return view('activity.create');
+        return view('request.create');
     }
 
     public function store(Request $request)
     {
         $this->validate($request,[
-            'title'=>'required|min:6|max:255', 
+            'title'=>'required|min:1', 
             'description'=>'required', 
         ]);
 
-        $note = new Activity();
+        $note = new RequestDocu();
 
         $chk = $request->chkStatus;
         $chkval = ($chk ==1? 1:0); 
@@ -44,35 +44,35 @@ class ActivityCtrl extends Controller
         $note->save();
 
         // return redirect( url('jobs/list') )->with('success',' Record was successfully saved.');
-        return redirect('activity')->with('success',' Record was successfully saved.');
+        return redirect('request')->with('success',' Record was successfully saved.');
 
     }
 
 
     public function show($id)
     {
-        $data = Activity::find($id);
+        $data = RequestDocu::find($id);
 
         // dd($data);
-        return view('front.activity_show',compact('data'));
+        return view('front.request_show',compact('data'));
 
     }
 
     public function edit($id)
     {
-        $data = Activity::find($id);
-        return view('Activity.create',compact('data'));
+        $data = RequestDocu::find($id);
+        return view('request.create',compact('data'));
     }
     
 
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'title'=>'required|min:6', 
+            'title'=>'required', 
             'description'=>'required', 
         ]);
 
-        $note = Activity::find($id);
+        $note = RequestDocu::find($id);
 
         $chk = $request->chkStatus;
         $chkval = ($chk ==1? 1:0); 
@@ -82,16 +82,16 @@ class ActivityCtrl extends Controller
         $note->xstatus = $chkval;
         $note->save();
 
-        return redirect('activity')->with('success',' Record was successfully updated.');
+        return redirect('request')->with('success',' Record was successfully updated.');
 
     }
 
     //delete record using standard laravel proc
     public function destroy($id)
     {
-        $data = Activity::find($id);
+        $data = RequestDocu::find($id);
         $data->delete();
-        return redirect('Activity')->with('success','Record was successfully deleted.');
+        return redirect('request')->with('success','Record was successfully deleted.');
     }
 
 
@@ -99,13 +99,13 @@ class ActivityCtrl extends Controller
     public function delete(Request $request)
     {
         $id  = $request->get('id');
-        $note = Activity::find($id);
+        $note = RequestDocu::find($id);
         $note->delete();
     }
 
     public function getdata(){
 
-        $data = Users::find(Auth::user()->id)->activity;
+        $data = Users::find(Auth::user()->id)->request;
 
         return Datatables::of($data)
 
@@ -113,9 +113,9 @@ class ActivityCtrl extends Controller
 
                 return '<div class="text-center">
                             <div class="btn-group">
-                                <a href="'. route('activity.edit',$data->id) .'" type="btn" class="btn btn-warning"><i class="fa fa-pencil-square"></i></a>
+                                <a href="'. route('request.edit',$data->id) .'" type="btn" class="btn btn-warning"><i class="fa fa-pencil-square"></i></a>
 
-                                <button id="btndelete" class="btn btn-danger" data-docid='. $data->id .'  data-href="'. route('activity.delete', $data->id ) .'" ><i class="fa fa-trash-o"></i></button>
+                                <button id="btndelete" class="btn btn-danger" data-docid='. $data->id .'  data-href="'. route('request.delete', $data->id ) .'" ><i class="fa fa-trash-o"></i></button>
                             </div>
                         </div>
                         ';
@@ -131,9 +131,9 @@ class ActivityCtrl extends Controller
 
        ->editColumn('xstatus', function ($data) {
                 return $data->xstatus == 0 ? 
-                '<div class="text-center"><span class="label bg-red text-center"><i class="fa fa-clock-o"></i> Unpublish</span></div>' 
+                '<div class="text-center"><span class="label bg-red text-center"><i class="fa fa-clock-o"></i> Pending</span></div>' 
                 : 
-                '<div class="text-center"><span class="label bg-green"> <i class="fa fa-check-circle-o"></i> Publish</span></div>';
+                '<div class="text-center"><span class="label bg-green"> <i class="fa fa-check-circle-o"></i> Closed</span></div>';
             })
 
         ->editColumn('created_at',function ($data){
@@ -153,9 +153,9 @@ class ActivityCtrl extends Controller
             ->make(true);
     }
 
-    public function list_activity(){
-        $datas  = Activity::whereIn('xstatus',array(1))->get()->sortbydesc('created_at');
-        return view('front.activity',compact('datas'));
+    public function list_request(){
+        $datas  = RequestDocu::whereIn('xstatus',array(1))->get()->sortbydesc('created_at');
+        return view('front.request',compact('datas'));
      
     }
 
