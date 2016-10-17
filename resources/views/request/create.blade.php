@@ -40,22 +40,35 @@
 
                     <br>
 
-
-
-
                         <div class="form-group{{ $errors->has('title') ? ' has-error' : ''}} ">
+                            {!! Form::label('lbltitle', 'Subject') !!}
 
-                            <label for="title">Academic Documents (Mutiple Select List)</label>
-                            <br>
-                            <select  data-width="50%" multiple class="selectpicker" required id="title" name="title">
-                                <option value="tr">Transcript</option>
-                                <option value="de">Diploma</option>
-                                <option value="gm">Good Moral</option>
-                                <option value="ot">Others(Specify under Remarks)</option>
-                            </select>
+                            <div class="col-mid-6" clearfix>
+                                 {!! Form::text('title',  (empty($data)? null: $data->title) , ['class' => 'form-control','autofocus'=>'autofocus','placeholder'=>'Subject', 'required' => 'required']) !!}
+                            </div>
                             <small class="text-danger">{{ $errors->first('title') }}</small>
                         </div>       
 
+
+
+                        <div class="form-group{{ $errors->has('documents') ? ' has-error' : ''}} ">
+
+                            <label for="documents">Academic Documents (Mutiple Select List)</label>
+                            <br>
+                        
+                            {!!   Form::select('documents[]', [
+                                    'tr' => 'Transcript (P350.00)', 
+                                    'de' => 'Diploma (P350.00)',
+                                    'hr' => 'Honorable (P350.00)',
+                                    'gm' => 'Good Moral (P50.00)', 
+                                    'cf' => 'Certification (P50.00)', 
+                                    'rr' => 'Red Ribbon (P300.00)', 
+                                    'ctc' => 'Certified True Copy (P50.00)', 
+                                    'ot' => 'Others (Specify under Remarks)'
+                                    ], (empty($data)? null: explode(',', $data->documents)), ['class'=>'selectpicker','multiple' => 'multiple','required'=>'required','data-width'=>'100%']);
+                            !!}
+                            <small class="text-danger">{{ $errors->first('documents') }}</small>
+                        </div>      
 
 
                         <div class="form-group{{ $errors->has('description') ? ' has-error' : ''}}">

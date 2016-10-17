@@ -23,10 +23,12 @@
 
     <link rel="stylesheet" href=" {{ asset('dist/css/skins/_all-skins.min.css') }} ">
     <link rel="stylesheet" href=" {{ asset('dist/css/toastr.min.css') }} ">
+    
 
+    <link rel="stylesheet" href=" {{ asset('dist/css/bootstrap-select.min.css') }} ">
+    <link rel="stylesheet" href=" {{ asset('plugins/datepicker/datepicker3.css') }} ">
 
-
- <link rel="stylesheet" href=" {{ asset('dist/css/bootstrap-select.min.css') }} ">
+    
 
     
     @yield('css.import')
@@ -98,6 +100,7 @@
 
 
 <script src=" {{ asset('dist/js/bootstrap-select.min.js') }}"></script>
+<script src=" {{ asset('plugins/datepicker/bootstrap-datepicker.js') }}"></script>
 
 
 @yield('jsscript')     

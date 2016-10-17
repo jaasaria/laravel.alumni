@@ -12,7 +12,21 @@ class Users extends Model
 {
     
     protected $table = 'users';
-    protected $fillable = ['name','address','mobile','citizenship','designation','email','note','tmcno','avatar'];
+    protected $fillable = ['name','address','mobile','citizenship','designation','email','note','avatar','middlename','lastname','campus','program','yeargraduated','companyname','companyadd','created_at'];
+
+
+	protected $dates = ['yeargraduated'];
+
+	 // public function getDateOfBirthAttribute($value)
+  //   {
+  //       return Carbon::parse($value)->format('m/d/Y');
+  //   }
+  //   public function formDateOfBirthAttribute($value)
+  //   {
+  //       return Carbon::parse($value)->format('Y-m-d');
+  //   }
+
+
 
 
 	public function userlog(){

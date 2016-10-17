@@ -5,13 +5,16 @@ namespace iloilofinest\Http\Controllers;
 use Illuminate\Http\Request;
 use iloilofinest\Http\Requests;
 
-use iloilofinest\Models\Profile; 
 use iloilofinest\Models\UserLog; 
 use iloilofinest\Models\Users; 
+use iloilofinest\Models\Profile; 
+
+// use Carbon\Carbon;
 use Auth;
 use Session;
 use Hash;
 use Redirect;
+use DateTime;
 
  // use Intervention\Image\Image;
 use Image;
@@ -35,10 +38,6 @@ class ProfileCtrl extends Controller
 
     public function index()
     {
-
-        // $timezone = Config::get('test');
-
-
         $id =  Auth::user()->id;
         $profile = Profile::find($id);
         return view('profile.profile')->with('profile',$profile); 
@@ -107,7 +106,6 @@ class ProfileCtrl extends Controller
 
     public function storepassword(Request $request){
 
-
              $validator = Validator::make($request->all(), [
             'current' => 'required|min:6',
             'newpassword'=>'required|min:6',
@@ -120,9 +118,6 @@ class ProfileCtrl extends Controller
                          ->withInput()
                          ->with('tab','second');
             }
-
-
-
 
             if (Hash::check($request->current, Auth::user()->password)){
                 $user  =  Users::find(Auth::user()->id);
@@ -154,23 +149,51 @@ class ProfileCtrl extends Controller
     public function storeprofile(Request $request){
 
         $this->validate($request,[
-            'fullname'=>'required|max:50',
+            'firstname'=>'required|max:50',
+            'middlename'=>'required|max:50',
+            'lastname'=>'required|max:50',
+
             'address'=>'required|max:100',
-            'designation'=>'required|max:50',
             'mobile'=>'required|max:50',
             'Citizenship'=>'required|max:50',
-            'notes'=>'required|max:255'
+
+            'yeargraduated'=>'required|date',
+            'notes'=>'max:255'
+
+
             ]);
 
 
             $user  =  Users::find(Auth::user()->id);
           
-            $user->name  =  $request->fullname;
+            $user->name  =  $request->firstname;
+            $user->middlename  =  $request->middlename;
+            $user->lastname  =  $request->lastname;
+
             $user->address  =  $request->address;
-            $user->designation  =  $request->designation;
             $user->mobile  =  $request->mobile;
             $user->citizenship  =  $request->Citizenship;
-            $user->note  =  $request->notes;            
+
+            $user->designation  =  $request->designation;
+            
+            
+            $user->note  =  $request->notes;        
+
+
+            $user->campus  =  $request->campus;        
+            $user->program  =  $request->program; 
+
+
+            $date=date_create($request->yeargraduated);
+            $user->yeargraduated  = date_format($date,"Y-m-d");
+
+
+
+            $user->companyname  =  $request->companyname;        
+            $user->companyadd  =  $request->companyadd;        
+
+
+
             $user->save();
 
             dbfunction::insertlogs(Auth::user()->id,'Update Profile');

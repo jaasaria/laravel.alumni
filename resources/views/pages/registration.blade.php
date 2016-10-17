@@ -12,15 +12,30 @@
                 {{ csrf_field() }}
         
                 <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
-                    {!! Form::text('name', null, ['placeholder'=>'Name','class' => 'form-control', 'required' => 'required']) !!}
+                    {!! Form::text('name', null, ['placeholder'=>'Enter First Name','class' => 'form-control', 'required' => 'required']) !!}
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     <small class="text-danger">{{ $errors->first('name') }}</small>
                 </div>
-                <div class="form-group has-feedback{{ $errors->has('TmcNo') ? ' has-error' : '' }}">
+
+                <div class="form-group has-feedback{{ $errors->has('middlename') ? ' has-error' : '' }}">
+                    {!! Form::text('middlename', null, ['placeholder'=>'Enter Middle Name','class' => 'form-control', 'required' => 'required']) !!}
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    <small class="text-danger">{{ $errors->first('middlename') }}</small>
+                </div>
+
+
+                <div class="form-group has-feedback{{ $errors->has('lastname') ? ' has-error' : '' }}">
+                    {!! Form::text('lastname', null, ['placeholder'=>'Enter Last Name','class' => 'form-control', 'required' => 'required']) !!}
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                    <small class="text-danger">{{ $errors->first('lastname') }}</small>
+                </div>
+
+
+             {{--    <div class="form-group has-feedback{{ $errors->has('TmcNo') ? ' has-error' : '' }}">
                     {!! Form::text('TmcNo', null, ['placeholder'=>'TMC TR No.','class' => 'form-control', 'required' => 'required']) !!}
                     <small class="text-danger">{{ $errors->first('TmcNo') }}</small>
                     <span class="glyphicon glyphicon-list-alt form-control-feedback"></span>
-                </div>
+                </div> --}}
             
                 <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
                     <input id="email" name="email" type="email" class="form-control" placeholder="Email" value="{{ old('email') }}">

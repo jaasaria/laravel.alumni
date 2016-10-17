@@ -29,23 +29,25 @@ class RequestCtrl extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'title'=>'required|min:1', 
+            'title'=>'required|max:200', 
+            'documents'=>'required', 
             'description'=>'required', 
         ]);
 
+
+        $cat = $request->documents; 
+        $cat2= implode(",",$cat);
+
         $note = new RequestDocu();
 
-        $chk = $request->chkStatus;
-        $chkval = ($chk ==1? 1:0); 
-        $note->title = $request->title;
+        $note->title =  $request->title;
+        $note->documents = $cat2;
         $note->description = $request->description;
-        $note->xstatus = $chkval;
+        
         $note->user_id = Auth::user()->id;
         $note->save();
 
-        // return redirect( url('jobs/list') )->with('success',' Record was successfully saved.');
         return redirect('request')->with('success',' Record was successfully saved.');
-
     }
 
 
@@ -68,18 +70,20 @@ class RequestCtrl extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'title'=>'required', 
+            'title'=>'required|max:200', 
+            'documents'=>'required', 
             'description'=>'required', 
         ]);
 
+
+        $cat = $request->documents; 
+        $cat2= implode(",",$cat);
+
         $note = RequestDocu::find($id);
 
-        $chk = $request->chkStatus;
-        $chkval = ($chk ==1? 1:0); 
-
         $note->title = $request->title;
+        $note->documents = $cat2;
         $note->description = $request->description;
-        $note->xstatus = $chkval;
         $note->save();
 
         return redirect('request')->with('success',' Record was successfully updated.');

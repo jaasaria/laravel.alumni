@@ -8,7 +8,7 @@ class RequestDocu extends Model
 {
     
     protected $table = 'tbl_request';
-    protected $fillable = ['title','description','xstatus'];
+    protected $fillable = ['title','description','documents','xstatus'];
 
 
     public function user(){

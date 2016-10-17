@@ -74,7 +74,7 @@
 			<table id="table" class="table table-striped table-hover " cellspacing="0" width="100%">
 				<thead>
 					<tr>
-						<th style="width:20%">Documents</th>
+						<th style="width:20%">Subject</th>
 						<th style="width:40%">Description</th>
 						<th class="text-center" style="width:10%">Status</th>
 						<th class="text-center" style="width:13%">Date</th>
@@ -84,7 +84,7 @@
 			
 				<tfoot>
 	                <tr>
-	                	<th>Documents</th>
+	                	<th>Subject</th>
 	                 	<th>Description</th>
 						<th class="text-center">Status</th>
 						<th class="text-center">Date</th>
