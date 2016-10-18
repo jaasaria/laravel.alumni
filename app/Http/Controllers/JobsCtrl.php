@@ -18,6 +18,7 @@ class JobsCtrl extends Controller
 
     public function index()
     {
+    
         return view('jobs.list');
     }
 
@@ -52,6 +53,9 @@ class JobsCtrl extends Controller
     public function show($id)
     {
         $data = jobs::find($id);
+        $data->increment('hits');
+        $data->save();
+
         return view('front.jobs_show',compact('data'));
 
     }

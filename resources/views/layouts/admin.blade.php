@@ -12,6 +12,7 @@
 
 
 
+
     <link rel="stylesheet" href=" {{ asset('bootstrap/css/bootstrap.min.css') }} ">
     <link rel="stylesheet" href=" {{ asset('plugins/datatables/dataTables.bootstrap.css') }} ">
 
@@ -24,13 +25,14 @@
     <link rel="stylesheet" href=" {{ asset('dist/css/skins/_all-skins.min.css') }} ">
     <link rel="stylesheet" href=" {{ asset('dist/css/toastr.min.css') }} ">
     
-
     <link rel="stylesheet" href=" {{ asset('dist/css/bootstrap-select.min.css') }} ">
     <link rel="stylesheet" href=" {{ asset('plugins/datepicker/datepicker3.css') }} ">
 
-    
 
-    
+    {{-- datatable print button --}}
+    <link rel="stylesheet" href=" {{ asset('css/buttons.dataTables.min.css') }} ">
+
+
     @yield('css.import')
 
     <style type="text/css">        
@@ -77,7 +79,9 @@
     $("#table1").DataTable();
 </script>
 
-{{-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> --}}
+
+
+
 
 <script src=" {{ asset('js/jquery.min.js') }} "></script>
 
@@ -87,8 +91,6 @@
 
 <script src=" {{ asset('dist/js/app.min.js') }} "></script>
 <script src=" {{ asset('dist/js/demo.js') }} "></script>
-
-
 
 
 {{-- under public folder --}}
@@ -101,6 +103,21 @@
 
 <script src=" {{ asset('dist/js/bootstrap-select.min.js') }}"></script>
 <script src=" {{ asset('plugins/datepicker/bootstrap-datepicker.js') }}"></script>
+
+
+{{-- datatable print button --}}
+<script src=" {{ asset('js/buttons.print.min.js') }} "></script>
+<script src=" {{ asset('js/dataTables.buttons.min.js') }} "></script>
+
+
+
+<script src=" {{ asset('js/buttons.flash.min.js') }} "></script>
+<script src=" {{ asset('js/jszip.min.js') }} "></script>
+<script src=" {{ asset('js/pdfmake.min.js') }} "></script>
+<script src=" {{ asset('js/vfs_fonts.js') }} "></script>
+<script src=" {{ asset('js/buttons.html5.min.js') }} "></script>
+
+
 
 
 @yield('jsscript')     

@@ -14,7 +14,6 @@ use Auth;
 use Session;
 use Hash;
 use Redirect;
-use DateTime;
 
  // use Intervention\Image\Image;
 use Image;

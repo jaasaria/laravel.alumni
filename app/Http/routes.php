@@ -17,6 +17,19 @@ Route::get('/list_activity/show/{id}', ['uses' => 'ActivityCtrl@show','as' => 'f
 
 
 
+// Report - Alumni
+Route::group(['middleware' => 'auth','prefix' => 'report/alumni'],function(){
+	Route::get('/', ['uses' => 'ReportAlumniCtrl@index','as' => 'report.alumni.list']);
+	// Route::get('/create', ['uses' => 'ReportAlumniCtrl@create','as' => 'request.create']);
+	// Route::post('/store', ['uses' => 'ReportAlumniCtrl@store','as' => 'request.store']);
+	Route::get('/edit/{id}', ['uses' => 'ReportAlumniCtrl@edit','as' => 'report.alumni.edit']);
+	Route::post('/update/{id}', ['uses' => 'ReportAlumniCtrl@update','as' => 'report.alumni.update']);
+	// Route::get('/destroy/{id}', ['uses' => 'ReportAlumniCtrl@destroy','as' => 'request.destroy']);
+	Route::delete('/delete', ['uses' => 'ReportAlumniCtrl@delete','as' => 'report.alumni.delete']);
+	Route::get('/data', ['uses' => 'ReportAlumniCtrl@getdata','as' => 'report.alumni.data']);
+});
+
+
 // Request
 Route::group(['middleware' => 'auth','prefix' => 'request'],function(){
 	Route::get('/', ['uses' => 'RequestCtrl@index','as' => 'request.list']);
@@ -28,8 +41,6 @@ Route::group(['middleware' => 'auth','prefix' => 'request'],function(){
 	Route::delete('/delete', ['uses' => 'RequestCtrl@delete','as' => 'request.delete']);
 	Route::get('/data', ['uses' => 'RequestCtrl@getdata','as' => 'request.data']);
 });
-
-
 
 
 // Activity

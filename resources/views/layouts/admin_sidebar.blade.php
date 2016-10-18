@@ -38,7 +38,7 @@
 
 
             <li class="treeview">
-                <a href="#">
+                <a href="{{ Request::is('report') ? 'active' : '' }}">
                     <i class="fa fa-bar-chart"></i>
                     <span>Reports</span>
                     <span class="pull-right-container">
@@ -46,10 +46,11 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Alumni Report</a></li>
-                    {{-- <li><a href="#"><i class="fa fa-circle-o"></i> Contact Form</a></li> --}}
+                    <li {{ Request::is('report/alumni') ? 'active' : '' }}><a href="{{ url('report/alumni') }}"><i class="fa fa-circle-o"></i> Alumni Report</a></li>
                 </ul>
             </li>
+
+
            <li class="treeview {{ Request::is('profile','help','settings') ? 'active' : '' }}">
                 <a href="#">
                     <i class="fa fa-laptop"></i>

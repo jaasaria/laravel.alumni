@@ -61,6 +61,9 @@
               	</div>
             </div>
 
+{{-- 
+<a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+ --}}
 
 
 
@@ -194,11 +197,12 @@
 							                  <div class="input-group-addon">
 							                    <i class="fa fa-calendar"></i>
 							                  </div>
-							                    <input type="date" id="datepicker1" name="yeargraduated" class="form-control pull-right" id="yeargraduated" placeholder="mm/dd/yyyy" required value="{{(empty($profile)?date('Y-m-d'):$profile->yeargraduated) }}">
+							                    <input type="date" name="yeargraduated" class="form-control pull-right" id="yeargraduated" placeholder="mm/dd/yyyy" required value="{{(empty($profile)?date('Y-m-d'):$profile->yeargraduated) }}">
 							                </div>
 			                            </div>
 			                            <small class="text-danger">{{ $errors->first('yeargraduated') }}</small>
 			                        </div>
+
 
 									<hr>
 
@@ -252,8 +256,9 @@
 			                              <button type="submit" name="updateprofile" class="btn btn-primary">Update Profile</button>
 			                            </div>
 			                        </div>
-
 		                        {!! Form::close() !!}
+
+
 		                </div>
 
 		                <div class="{{ (Session::has('tab') ? 'active':'') }} tab-pane" id="account">

@@ -53,5 +53,12 @@ class Users extends Model
 
 
 
+public function getFullNameAttribute()
+{
+    return $this->attributes['lastname'] .' '. $this->attributes['name'].' '. $this->attributes['middlename'];
+}
+
+
+
 
 }
