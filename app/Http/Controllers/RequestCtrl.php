@@ -18,11 +18,23 @@ class RequestCtrl extends Controller
 
     public function index()
     {
-        return view('request.list');
+
+        $status = 0;
+
+        if ( Users::find(Auth::user()->id)->xstatus == 1){
+             $status = 1;
+        }
+
+        return view('request.list',compact('status'));
     }
 
     public function create()
     {
+
+        if ( Users::find(Auth::user()->id)->xstatus != 1){
+             return redirect('request')->with('error',' Alumni record was not yet verified.');
+        }
+
         return view('request.create');
     }
 
@@ -53,7 +65,7 @@ class RequestCtrl extends Controller
 
     public function show($id)
     {
-        $data = RequestDocu::find($id);
+        $data = RequestDocu::findorfail($id);
 
         // dd($data);
         return view('front.request_show',compact('data'));
@@ -62,7 +74,7 @@ class RequestCtrl extends Controller
 
     public function edit($id)
     {
-        $data = RequestDocu::find($id);
+        $data = RequestDocu::findorfail($id);
         return view('request.create',compact('data'));
     }
     
@@ -79,7 +91,7 @@ class RequestCtrl extends Controller
         $cat = $request->documents; 
         $cat2= implode(",",$cat);
 
-        $note = RequestDocu::find($id);
+        $note = RequestDocu::findorfail($id);
 
         $note->title = $request->title;
         $note->documents = $cat2;
@@ -93,7 +105,7 @@ class RequestCtrl extends Controller
     //delete record using standard laravel proc
     public function destroy($id)
     {
-        $data = RequestDocu::find($id);
+        $data = RequestDocu::findorfail($id);
         $data->delete();
         return redirect('request')->with('success','Record was successfully deleted.');
     }
@@ -103,13 +115,13 @@ class RequestCtrl extends Controller
     public function delete(Request $request)
     {
         $id  = $request->get('id');
-        $note = RequestDocu::find($id);
+        $note = RequestDocu::findorfail($id);
         $note->delete();
     }
 
     public function getdata(){
 
-        $data = Users::find(Auth::user()->id)->request;
+        $data = Users::findorfail(Auth::user()->id)->request;
 
         return Datatables::of($data)
 

@@ -1,7 +1,17 @@
 @extends('layouts.admin')
 
-@section('pagetitle','Academic Documents Request')
-@section('pagesubtitle','')
+{{-- @section('pagetitle','Academic Documents Request') --}}
+
+
+@section('pagetitle')
+	Academic Documents Request
+@stop
+
+@section('pagesubtitle')
+	{!! $status == 0 ? ' <small class="label label-danger"> Admin verification required </small> ':null !!}
+@stop
+
+
 @section('breadcrumb')
   	<ol class="breadcrumb">
 	    <li><a href="{{ route('admin.home')  }}"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -61,7 +71,11 @@
     <div class="box">
 
         <div class="box-header with-border">
-          	<h3 class="box-title">Listing</h3>
+          	<h3 class="box-title">Listing           
+          	</h3>
+
+          	
+
           	<span class="pull-right">
         		<a href=" {{ url('request/create') }} " class="btn btn-success">Create New</a>
         	</span>

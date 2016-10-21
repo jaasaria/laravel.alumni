@@ -28,6 +28,19 @@ class Users extends Model
 
 
 
+	public function scopeAlumni($query)
+	{
+		return $query->where('role', '=', 'alumni');
+	}
+	public function scopeAdmin($query)
+	{
+		return $query->where('role', '=', 'admin');
+	}
+	public function scopeVerified($query)
+	{
+		return $query->where('xstatus', '=', 1);
+	}
+
 
 	public function userlog(){
 		return $this->hasMany(UserLog::class,'user_id');

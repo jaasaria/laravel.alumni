@@ -14,7 +14,9 @@
       <div class="navbar-custom-menu">
 
         <ul class="nav navbar-nav">
-{{-- 
+
+
+          {{-- 
           <li class="dropdown messages-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-envelope-o"></i>
@@ -43,16 +45,19 @@
                     <p>
                           {{ Auth::user()->name }}
                           <br>
-                          <small>Web Developer</small>
-                          <small>Member since Nov. 20101
-                          </small>
+                          <small>{{ Auth::user()->designation }}</small>
+                          <small>Member since {{  date('Y', strtotime( Auth::user()->created_at)) .' - '. ucfirst(Auth::user()->role) }}</small>
                     </p>
 
                   </li>
 
+                  @if (auth::user()->role != 'admin')
+                  @endif
                   <li class="user-footer">
                         <a href=" {{ route('profile.index') }}" class="btn btn-default btn-flat blocks">Profile Information</a>
                   </li>
+
+
             </ul>
           </li>
 

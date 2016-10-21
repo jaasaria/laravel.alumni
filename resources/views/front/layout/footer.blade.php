@@ -22,7 +22,7 @@
 
 
                 <ul class="list-unstyled">
-                    <li>Valiant Building Mabini Street </li>
+                    <li>Senator Aquino Ave. Diversion</li>
                     <li>Iloilo City, Philippines</li>
                     <br>
                     <li><i class="livicon icon4 icon3" data-name="cellphone" data-size="18" data-loop="true" data-c="#ccc" data-hc="#ccc"></i>Phone:(033) 337-7784</li>

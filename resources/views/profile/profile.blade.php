@@ -56,14 +56,10 @@
 
                 		<p align="center" class="help-block"><small>Requirements: 160x160px, Max: 3MB File</small></p>
 
-
                 	</div>
               	</div>
             </div>
 
-{{-- 
-<a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
- --}}
 
 
 
@@ -178,9 +174,6 @@
 							                 	, (empty($profile)? null: $profile->program), ['class'=>'selectpicker','placeholder' => 'Select Program','required'=>'required','data-width'=>'100%']);
 										 !!}
 
-
-
-
 			                            </div>
 			                            <small class="text-danger">{{ $errors->first('program') }}</small>
 			                        </div>
@@ -197,7 +190,7 @@
 							                  <div class="input-group-addon">
 							                    <i class="fa fa-calendar"></i>
 							                  </div>
-							                    <input type="date" name="yeargraduated" class="form-control pull-right" id="yeargraduated" placeholder="mm/dd/yyyy" required value="{{(empty($profile)?date('Y-m-d'):$profile->yeargraduated) }}">
+							                    <input type="date" name="yeargraduated" class="form-control pull-right" id="yeargraduated" placeholder="mm/dd/yyyy" required value="{{(empty($profile)?date('Y-m-d'): $profile->yeargraduated) }}">
 							                </div>
 			                            </div>
 			                            <small class="text-danger">{{ $errors->first('yeargraduated') }}</small>

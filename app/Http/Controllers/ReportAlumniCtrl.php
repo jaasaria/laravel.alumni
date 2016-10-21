@@ -34,7 +34,7 @@ class ReportAlumniCtrl extends Controller
 
     public function edit($id)
     {
-        $data = Profile::find($id);
+        $data = Users::Alumni()->findorfail($id);
         return view('report.alumni.create',compact('data'));
     }
     
@@ -98,7 +98,10 @@ class ReportAlumniCtrl extends Controller
 
     public function getdata(){
 
-        $data = Users::all();
+
+        // $data = Users::where('role','alumni')->get();
+        $data = Users::Alumni()->get();
+
 
         return Datatables::of($data)
         ->addColumn('action', function ($data) {

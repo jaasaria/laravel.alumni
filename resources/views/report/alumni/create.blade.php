@@ -49,7 +49,6 @@
                         </div>
 
 
-
                         {{-- first name --}}
                         <div class="form-group has-feedback {{ $errors->has('firstname') ? ' has-error' : '' }}">
                             <label for="firstname" class="col-sm-2 control-label">First Name</label>
@@ -140,9 +139,6 @@
                                     , (empty($data)? null: $data->program), ['class'=>'selectpicker','placeholder' => 'Select Program','required'=>'required','data-width'=>'100%']);
                              !!}
 
-
-
-
                             </div>
                             <small class="text-danger">{{ $errors->first('program') }}</small>
                         </div>
@@ -159,13 +155,11 @@
                                               <div class="input-group-addon">
                                                 <i class="fa fa-calendar"></i>
                                               </div>
-                                                <input type="date" id="datepicker1" name="yeargraduated" class="form-control pull-right" id="yeargraduated" placeholder="mm/dd/yyyy" required value="{{(empty($data)?date('Y-m-d'):$data->yeargraduated) }}">
+                                                <input type="date" id="datepicker1" name="yeargraduated" class="form-control pull-right" id="yeargraduated" placeholder="mm/dd/yyyy" required value="{{(empty($data)?date('Y-m-d'):$data->yeargraduated->format('Y-m-d')) }}">
                                             </div>
                                         </div>
                                         <small class="text-danger">{{ $errors->first('yeargraduated') }}</small>
                                     </div>
-
-
 
                         <hr>
 

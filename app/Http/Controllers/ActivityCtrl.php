@@ -105,7 +105,8 @@ class ActivityCtrl extends Controller
 
     public function getdata(){
 
-        $data = Users::find(Auth::user()->id)->activity;
+        // $data = Users::find(Auth::user()->id)->activity;
+        $data = Activity::All();
 
         return Datatables::of($data)
 

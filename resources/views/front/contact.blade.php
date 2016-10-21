@@ -63,7 +63,7 @@
                             <h3 class="media-heading">Address:</h3>
                             {{-- <div class="danger">Jyostna</div> --}}
                             <address>
-                                Valiant Building Mabini Street
+                                Senator Aquino Ave. Diversion
                                 <br>Iloilo City, Philippines
                             </address>
                         </div>

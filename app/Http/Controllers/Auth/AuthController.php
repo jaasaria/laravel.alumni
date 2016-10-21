@@ -18,7 +18,6 @@ class AuthController extends Controller
     | This controller handles the registration of new users, as well as the
     | authentication of existing users. By default, this controller uses
     | a simple trait to add these behaviors. Why don't you explore it?
-    |
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
@@ -41,6 +40,16 @@ class AuthController extends Controller
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 
+
+    public function authenticate()
+    {
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
+
+            return redirect()->intended('request.list');
+        }
+    }
+
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -54,7 +63,6 @@ class AuthController extends Controller
             'middlename' => 'required|max:150',
             'lastname' => 'required|max:150',
             'email' => 'required|email|max:255|unique:users',
-            // 'TmcNo' => 'required|min:3|max:10|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
     }

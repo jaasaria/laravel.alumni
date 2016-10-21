@@ -107,7 +107,9 @@ class JobsCtrl extends Controller
 
     public function get_all_data(){
 
-        $data = Users::find(Auth::user()->id)->jobs;
+        // $data = Users::find(Auth::user()->id)->jobs;
+
+        $data = Jobs::all();
 
         return Datatables::of($data)
 

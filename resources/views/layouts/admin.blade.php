@@ -53,7 +53,7 @@
 
 
 <div class="content-wrapper">
-@yield('notification')
+    @yield('notification')
     <section class="content-header">
         <h1>
             @yield('pagetitle')
@@ -66,7 +66,8 @@
         @yield('content')
     </section>
 
-@yield('notificationfooter')
+    @yield('notificationfooter')
+
 </div>
 
 
@@ -75,9 +76,11 @@
 
 </div>
 
+
+{{-- 
 <script>
     $("#table1").DataTable();
-</script>
+</script> --}}
 
 
 

@@ -24,31 +24,35 @@
 
 
       <ul class="sidebar-menu">
+
+
         <li class="header">MAIN NAVIGATION</li>
 
-            <li class="{{ Request::is('admin') ? 'active' : '' }}"><a href="{{ route('admin.home') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li class="{{ Request::is('admin') ? 'active' : '' }}"><a href="{{ route('admin.home') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 
-            {{-- <li class="{{ Request::is('tickets','index') ? 'active' : '' }}"><a href="{{ route('ticket.index') }}"><i class="fa fa-ticket"></i> Activity Listing</a></li> --}}
+            @if (auth::user()->role != 'admin')
+                <li class="{{ Request::is('request') ? 'active' : '' }}"><a href="{{ url('request') }}"><i class="fa fa-ticket"></i> Academic Request</a></li>
+            @else
 
-            <li class="{{ Request::is('request') ? 'active' : '' }}"><a href="{{ url('request') }}"><i class="fa fa-ticket"></i> Academic Request</a></li>
+                <li class="{{ Request::is('alumni') ? 'active' : '' }}"><a href="{{ url('alumni') }}"><i class="fa fa-users "></i> Alumni Request</a></li>
 
-            <li class="{{ Request::is('activity') ? 'active' : '' }}"><a href="{{ url('activity') }}"><i class="fa fa-ticket"></i> Activities and Events</a></li>
+                <li class="{{ Request::is('activity') ? 'active' : '' }}"><a href="{{ url('activity') }}"><i class="fa fa-ticket"></i> Activities and Events</a></li>
 
-            <li class="{{ Request::is('jobs') ? 'active' : '' }}"><a href="{{ url('jobs') }}"><i class="fa fa-briefcase"></i> Jobs</a></li>
+                <li class="{{ Request::is('jobs') ? 'active' : '' }}"><a href="{{ url('jobs') }}"><i class="fa fa-briefcase"></i> Jobs</a></li>
 
-
-            <li class="treeview">
-                <a href="{{ Request::is('report') ? 'active' : '' }}">
-                    <i class="fa fa-bar-chart"></i>
-                    <span>Reports</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li {{ Request::is('report/alumni') ? 'active' : '' }}><a href="{{ url('report/alumni') }}"><i class="fa fa-circle-o"></i> Alumni Report</a></li>
-                </ul>
-            </li>
+                <li class="treeview">
+                    <a href="{{ Request::is('report') ? 'active' : '' }}">
+                        <i class="fa fa-bar-chart"></i>
+                        <span>Reports</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li {{ Request::is('report/alumni') ? 'active' : '' }}><a href="{{ url('report/alumni') }}"><i class="fa fa-circle-o"></i> Alumni Report</a></li>
+                    </ul>
+                </li>
+            @endif
 
 
            <li class="treeview {{ Request::is('profile','help','settings') ? 'active' : '' }}">
@@ -61,11 +65,17 @@
                 </a>
                 <ul class="treeview-menu">
                     
+                   
+
+                @if (auth::user()->role != 'admin')
                     <li class="{{ Request::is('profile') ? 'active' : '' }}"><a href="{{ url('profile') }}"><i class="fa fa-circle-o"></i> Profile</a></li>
+                @endif
 
-                    <li class="{{ Request::is('settings') ? 'active' : '' }}"><a href="{{ url('settings') }}"><i class="fa fa-circle-o"></i> Settings</a></li>
 
-                    <li class="{{ Request::is('help') ? 'active' : '' }}"><a href="{{ url('help') }}"><i class="fa fa-circle-o"></i> Help</a></li>
+                <li class="{{ Request::is('settings') ? 'active' : '' }}"><a href="{{ url('settings') }}"><i class="fa fa-circle-o"></i> Settings</a></li>
+
+                <li class="{{ Request::is('help') ? 'active' : '' }}"><a href="{{ url('help') }}"><i class="fa fa-circle-o"></i> Help</a></li>
+
                 </ul>
             </li>
 
