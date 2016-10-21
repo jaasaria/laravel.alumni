@@ -79,8 +79,9 @@
 			<table id="table" class="table table-striped table-hover " cellspacing="0" width="100%">
 				<thead>
 					<tr>
-						<th style="width:20%">Subject</th>
-						<th style="width:40%">Description</th>
+						<th style="width:15%">Name</th>
+						<th style="width:15%">Subject</th>
+						<th style="width:30%">Description</th>
 						<th class="text-center" style="width:10%">Status</th>
 						<th class="text-center" style="width:13%">Date</th>
 						<th class="text-center" style="width:10%">Action</th>
@@ -89,6 +90,7 @@
 			
 				<tfoot>
 	                <tr>
+	                	<th>Name</th>
 	                	<th>Subject</th>
 	                 	<th>Description</th>
 						<th class="text-center">Status</th>
@@ -122,8 +124,8 @@
                 processing: true,
                 serverSide: true,
                 ajax: '{!! url('alumni/data') !!}',
-                order: [[3, 'desc']],
                 columns: [
+                    { data: 'fullname', name: 'fullname' ,"searchable": true},
                     { data: 'title', name: 'title' ,"searchable": true},
                     { data: 'description', name: 'description' ,"searchable": true},
                     { data: 'xstatus', name: 'xstatus' },
@@ -150,7 +152,7 @@
                     };
 
 					$.ajax({  
-                         url:'{{ URL::to('request/delete') }}',  
+                         url:'{{ URL::to('alumni/delete') }}',  
                          type:"delete",  
                          data: value,  
                          success:function(){ 

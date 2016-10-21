@@ -4,6 +4,7 @@ namespace iloilofinest\Http\Controllers;
 
 use Illuminate\Http\Request;
 use iloilofinest\Models\Users;
+use iloilofinest\Models\Message;
 use iloilofinest\Models\RequestDocu;
 
 use Auth;
@@ -56,6 +57,28 @@ class AlumniCtrl extends Controller
         return redirect('request')->with('success',' Record was successfully saved.');
     }
 
+     public function message(Request $request)
+    {
+        $this->validate($request,[
+            'message'=>'required|max:200',
+        ]);
+
+
+        $note = new Message();
+
+        $note->user_id = $request->user_id;
+        $note->request_id = $request->request_id;
+
+        $note->description = $request->message;
+        $note->save();
+
+        // return redirect('alumni')->with('success',' Message was successfully saved.');
+
+        return redirect()->back()->with('success',' Message was successfully sent.');
+
+    }
+
+
 
     public function show($id)
     {
@@ -69,30 +92,22 @@ class AlumniCtrl extends Controller
     public function edit($id)
     {
         $data = RequestDocu::findorfail($id);
-        return view('request.create',compact('data'));
+        return view('alumni.create',compact('data'));
     }
     
 
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'title'=>'required|max:200', 
-            'documents'=>'required', 
-            'description'=>'required', 
-        ]);
 
-
-        $cat = $request->documents; 
-        $cat2= implode(",",$cat);
+        $chk = $request->chkStatus;
+        $chkval = ($chk ==1? 1:0); 
+   
 
         $note = RequestDocu::findorfail($id);
-
-        $note->title = $request->title;
-        $note->documents = $cat2;
-        $note->description = $request->description;
+        $note->xstatus = $chkval;
         $note->save();
 
-        return redirect('request')->with('success',' Record was successfully updated.');
+        return redirect('alumni')->with('success',' Record was successfully updated.');
 
     }
 
@@ -123,12 +138,17 @@ class AlumniCtrl extends Controller
 
                 return '<div class="text-center">
                             <div class="btn-group">
-                                <a href="'. route('request.edit',$data->id) .'" type="btn" class="btn btn-warning"><i class="fa fa-pencil-square"></i></a>
+                                <a href="'. route('alumni.edit',$data->id) .'" type="btn" class="btn btn-warning"><i class="fa fa-pencil-square"></i></a>
 
-                                <button id="btndelete" class="btn btn-danger" data-docid='. $data->id .'  data-href="'. route('request.delete', $data->id ) .'" ><i class="fa fa-trash-o"></i></button>
+                                <button id="btndelete" class="btn btn-danger" data-docid='. $data->id .'  data-href="'. route('alumni.delete', $data->id ) .'" ><i class="fa fa-trash-o"></i></button>
                             </div>
                         </div>
                         ';
+            })
+
+
+       ->editColumn('fullname', function ($data) {
+                return ucwords($data->user->name . ' ' . $data->user->middlename . ' ' . $data->user->lastname) ;
             })
 
         ->editColumn('title', ' 

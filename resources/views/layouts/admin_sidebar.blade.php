@@ -81,7 +81,7 @@
 
 
             <li class="header">SHORTCUT</li>
-            <li><a href="/"><i class="fa fa-circle-o text-aqua"></i> <span>Website</span></a></li>
+            <li><a href=" {{url('/')}} "><i class="fa fa-circle-o text-aqua"></i> <span>Website</span></a></li>
 
       </ul>
 

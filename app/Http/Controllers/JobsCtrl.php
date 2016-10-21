@@ -158,9 +158,12 @@ class JobsCtrl extends Controller
     }
 
     public function list_jobs(){
-        $jobs  = jobs::whereIn('xstatus',array(1))->get()->sortbydesc('created_at');
-        return view('front.jobs',compact('jobs'));
+
+        $datas  = Jobs::whereIn('xstatus',array(1))->get()->sortbydesc('created_at');
+        return view('front.jobs',compact('datas'));
      
     }
+
+
 
 }

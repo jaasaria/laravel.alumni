@@ -88,11 +88,51 @@
             
                     {!! Form::close() !!}
                     
+
+
+
+        @if (!empty($data))
+           
+          
+                @if (count($data->message) > 0)
+
+                            <div class="box box-success">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Inbox</h3>
+                                </div>
+                                <div class="box-body">
+                                    <table class="table table-hover table-striped">
+                                        <tbody>
+                                            @foreach ($data->message as $message)
+                                                <tr>
+                                                        <td>
+                                                            <p>{!! '<small>' . $message->created_at->diffForHumans() . '</small>' .' : '.$message->description !!}</p>
+                                                        </td>
+
+
+                                                </tr>              
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="box-footer">
+                                        <p>Total Message: {{ count($data->message) }} </p>
+                                </div>
+                            </div>
+                @endif
+
+
+        @endif 
+
+
+
+
+
+
+
+
             </div>
         </div>
-
-
-
 
     </div>
 @stop

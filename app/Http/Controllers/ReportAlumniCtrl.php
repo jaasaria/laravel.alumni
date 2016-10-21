@@ -161,10 +161,5 @@ class ReportAlumniCtrl extends Controller
             ->make(true);
     }
 
-    public function list_activity(){
-        $datas  = Activity::whereIn('xstatus',array(1))->get()->sortbydesc('created_at');
-        return view('front.report',compact('datas'));
-     
-    }
 
 }

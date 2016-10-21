@@ -44,32 +44,30 @@
                         <h3 class="small-heading">Listing</h3>
 
 
-                        @foreach ($jobs as $job)
+                        @foreach ($datas as $data)
                     
 
                             <div class="featured-post-wide thumbnail">
 
                                 <div class="featured-text relative-left">
-                                    <h3 class="primary"><a href="{{ url('/list_jobs/show',$job->id) }}" id="title">{{ $job->title }}</a></h3>
+                                    <h3 class="primary"><a href="{{ url('/list_jobs/show',$data->id) }}" id="title">{{ $data->title }}</a></h3>
 
                                     
                                     <p id="description">
-                                        <p>{!! $job->description !!}</p>
+                                        <p>{!! $data->description !!}</p>
                                     </p>
                                 <p class="additional-post-wrap">
                                     <span class="additional-post">
-                                        <i class="livicon" data-name="user" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i> By&nbsp; {{ $job->username->name }}
+                                        <i class="livicon" data-name="user" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i> By&nbsp;{{ $data->user->name }}
                                     </span>
 
-
-
                                     <span class="additional-post">
-                                        <i class="livicon" data-name="clock" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i>{{ $job->created_at->diffForHumans() }}
+                                        <i class="livicon" data-name="clock" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i>{{ $data->created_at->diffForHumans() }}
                                     </span>
                                 </p>
                                 <hr>
                                 <p class="text-right">
-                                    <a href="{{ url('/list_jobs/show',$job->id) }}" class="btn btn-primary text-white">Read more</a>
+                                    <a href="{{ url('/list_jobs/show',$data->id) }}" class="btn btn-primary text-white">Read more</a>
                                 </p>
                                 </div>
                             </div>

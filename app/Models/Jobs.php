@@ -11,7 +11,7 @@ class Jobs extends Model
     protected $fillable = ['title','description','xstatus'];
 
 
-    public function username(){
+    public function user(){
     	return $this->belongsTo(Users::class,'user_id');
 
     }

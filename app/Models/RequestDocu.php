@@ -10,12 +10,15 @@ class RequestDocu extends Model
     protected $table = 'tbl_request';
     protected $fillable = ['title','description','documents','xstatus'];
 
-
     public function user(){
     	return $this->belongsTo(Users::class,'user_id');
 
     }
 
+    public function message(){
+    	return $this->hasmany(Message::class,'request_id')->orderBy('id','desc');
+
+    }
 
 }
 
