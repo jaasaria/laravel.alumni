@@ -28,6 +28,10 @@ class Users extends Model
 
 
 
+	public function getFullNameAttribute() {
+        return ucfirst($this->name) . ' ' . ucfirst($this->middlename). ' ' . ucfirst($this->lastname);
+    }
+
 	public function scopeAlumni($query)
 	{
 		return $query->where('role', '=', 'alumni');
@@ -63,13 +67,6 @@ class Users extends Model
 	public function tickets(){
 		return $this->hasMany(Ticket::class,'user_id');
 	}
-
-
-
-public function getFullNameAttribute()
-{
-    return $this->attributes['lastname'] .' '. $this->attributes['name'].' '. $this->attributes['middlename'];
-}
 
 
 

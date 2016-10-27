@@ -22,23 +22,22 @@
                width:100%;
                background: url({{ asset('img/logo.png') }}) ; 
             }
+
             .login-box {
                 width: 360px;
                 margin-top: 7%;
                 margin-right: auto;
                 margin-bottom: 7%;
                 margin-left: auto;
-
             }
 
             .login-logo{
                 font-size: 35px;
                 text-align: center;
                 margin-bottom: 25px;
-                font-weight: 300;
-                
-                
+                font-weight: 300;                                
             }
+
             .login-box-body {
                 background: #fff;
                 padding: 20px;
@@ -66,7 +65,6 @@
                 margin-bottom: 10px;
                 margin-left:  20px;
             }
-
 
             @yield('css')
 

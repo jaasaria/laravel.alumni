@@ -23,6 +23,8 @@
 @section('content')
 
     <div class="box">
+
+
         <div class="box-header with-border">
           	<h3 class="box-title">Create</h3>
           	<span class="pull-right">
@@ -31,15 +33,17 @@
         </div>
 
 
+
+
+
         <div class="row">
             <div class="col-md-12">
 
-                {!! Form::open(['method' => 'POST', 'url' => (empty($data) ? route('request.store'): route('request.update',$data->id))  , 'class' => 'form-vertical']) !!}
+                         
+               {!! Form::open(['method' => 'POST', 'url' => (empty($data) ? route('request.store'): route('request.update',$data->id))  , 'class' => 'form-vertical']) !!}
 
                     <div class="col-md-12">
-
-                    <br>
-
+                        <br>
                         <div class="form-group{{ $errors->has('title') ? ' has-error' : ''}} ">
                             {!! Form::label('lbltitle', 'Subject') !!}
 
@@ -48,9 +52,6 @@
                             </div>
                             <small class="text-danger">{{ $errors->first('title') }}</small>
                         </div>       
-
-
-
                         <div class="form-group{{ $errors->has('documents') ? ' has-error' : ''}} ">
 
                             <label for="documents">Academic Documents (Mutiple Select List)</label>
@@ -69,15 +70,11 @@
                             !!}
                             <small class="text-danger">{{ $errors->first('documents') }}</small>
                         </div>      
-
-
                         <div class="form-group{{ $errors->has('description') ? ' has-error' : ''}}">
                             {!! Form::label('lblnote', 'Remarks') !!}
                             {!! Form::textarea('description',  (empty($data)? null: $data->description), ['id'=>'description','class' => 'form-control','placeholder'=>'Description', 'required' => 'required']) !!}
                             <small class="text-danger">{{ $errors->first('description') }}</small>
                         </div>       
-
-
                     </div>
                     
                     <div class="form-group text-center">
@@ -86,66 +83,28 @@
                             }}
                     </div>
             
-                    {!! Form::close() !!}
-                    
-
-
-
-        @if (!empty($data))
-           
-          
-                @if (count($data->message) > 0)
-
-                            <div class="box box-success">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">Inbox</h3>
-                                </div>
-                                <div class="box-body">
-                                    <table class="table table-hover table-striped">
-                                        <tbody>
-                                            @foreach ($data->message as $message)
-                                                <tr>
-                                                        <td>
-                                                            <p>{!! '<small>' . $message->created_at->diffForHumans() . '</small>' .' : '.$message->description !!}</p>
-                                                        </td>
-
-
-                                                </tr>              
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="box-footer">
-                                        <p>Total Message: {{ count($data->message) }} </p>
-                                </div>
-                            </div>
-                @endif
-
-
-        @endif 
-
-
-
-
-
+                {!! Form::close() !!}
 
 
 
             </div>
         </div>
-
     </div>
+
+
+
+@include('closure.message')
+
+
 @stop
 
 
 
 
 
-@push('scripts')
 
+@push('scripts')
     <script src="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>  
-          
-   
 @endpush 
 
 

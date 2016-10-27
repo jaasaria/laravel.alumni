@@ -24,35 +24,15 @@ Route::get('/list_activity/show/{id}', ['uses' => 'ActivityCtrl@show','as' => 'f
 // Alumni Request - view by admin
 Route::group(['middleware' => 'Admin','prefix' => 'alumni'],function(){
 	Route::get('/', ['uses' => 'AlumniCtrl@index','as' => 'alumni.list']);
-
-
-	// Route::get('/create', ['uses' => 'RequestCtrl@create','as' => 'request.create']);
-	Route::post('/message', ['uses' => 'AlumniCtrl@message','as' => 'alumni.message']);
-
-
 	Route::get('/edit/{id}', ['uses' => 'AlumniCtrl@edit','as' => 'alumni.edit']);
 	Route::post('/update/{id}', ['uses' => 'AlumniCtrl@update','as' => 'alumni.update']);
-
 	Route::delete('/delete', ['uses' => 'AlumniCtrl@delete','as' => 'alumni.delete']);
 	Route::get('/data', ['uses' => 'AlumniCtrl@getdata','as' => 'alumni.data']);
+	Route::post('/message', ['uses' => 'AlumniCtrl@message','as' => 'alumni.message']);
 });
 
-
-
-
-
-
-// Report - Alumni
-Route::group(['middleware' => 'Admin','prefix' => 'report/alumni'],function(){
-	Route::get('/', ['uses' => 'ReportAlumniCtrl@index','as' => 'report.alumni.list']);
-	// Route::get('/create', ['uses' => 'ReportAlumniCtrl@create','as' => 'request.create']);
-	// Route::post('/store', ['uses' => 'ReportAlumniCtrl@store','as' => 'request.store']);
-	Route::get('/edit/{id}', ['uses' => 'ReportAlumniCtrl@edit','as' => 'report.alumni.edit']);
-	Route::post('/update/{id}', ['uses' => 'ReportAlumniCtrl@update','as' => 'report.alumni.update']);
-	// Route::get('/destroy/{id}', ['uses' => 'ReportAlumniCtrl@destroy','as' => 'request.destroy']);
-	Route::delete('/delete', ['uses' => 'ReportAlumniCtrl@delete','as' => 'report.alumni.delete']);
-	Route::get('/data', ['uses' => 'ReportAlumniCtrl@getdata','as' => 'report.alumni.data']);
-});
+// Special Message Sending
+Route::post('/message', ['uses' => 'AlumniCtrl@message','as' => 'alumni.message']);
 
 
 // Request - view by alumni
@@ -65,7 +45,22 @@ Route::group(['middleware' => 'auth','prefix' => 'request'],function(){
 	Route::get('/destroy/{id}', ['uses' => 'RequestCtrl@destroy','as' => 'request.destroy']);
 	Route::delete('/delete', ['uses' => 'RequestCtrl@delete','as' => 'request.delete']);
 	Route::get('/data', ['uses' => 'RequestCtrl@getdata','as' => 'request.data']);
+	// Route::post('/message', ['uses' => 'RequestCtrl@message','as' => 'request.message']);
 });
+
+
+
+// Report - Alumni
+Route::group(['middleware' => 'Admin','prefix' => 'report/alumni'],function(){
+	Route::get('/', ['uses' => 'ReportAlumniCtrl@index','as' => 'report.alumni.list']);
+	Route::get('/edit/{id}', ['uses' => 'ReportAlumniCtrl@edit','as' => 'report.alumni.edit']);
+	Route::post('/update/{id}', ['uses' => 'ReportAlumniCtrl@update','as' => 'report.alumni.update']);
+	Route::delete('/delete', ['uses' => 'ReportAlumniCtrl@delete','as' => 'report.alumni.delete']);
+	Route::get('/data', ['uses' => 'ReportAlumniCtrl@getdata','as' => 'report.alumni.data']);
+});
+
+
+
 
 
 // Activity

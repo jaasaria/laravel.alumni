@@ -92,80 +92,17 @@
             
                     {!! Form::close() !!}
 
-          
-
-
-                {{-- Message Panel --}}
-                {!! Form::open(['method' => 'POST', 'url' => ( route('alumni.message'))  , 'class' => 'form-vertical']) !!}
-
-
-                    <div class="col-md-12">
-
-                        <hr>
-                        <br>
-
-                        {!! Form::hidden('user_id', $data->user->id) !!}
-                        {!! Form::hidden('request_id', $data->id) !!}
-
-                        <div class="form-group{{ $errors->has('message') ? ' has-error' : ''}}">
-                            <h2>Sent Message?</h2>
-                            {!! Form::textarea('message',  null, ['id'=>'message','class' => 'form-control','placeholder'=>'Description', 'required' => 'required']) !!}
-                            <small class="text-danger">{{ $errors->first('message') }}</small>
-                        </div>    
-
-                    </div>
-                    
-                    <div class="form-group text-center">
-                           {{Form::button('<i class="fa fa-floppy-o"></i> Send Message' , 
-                            array('type' => 'submit','class'=> 'btn btn-primary',))
-                            }}
-                    </div>
-            
-                    {!! Form::close() !!}
-
-                <hr>
-
-
-                @if (count($data->message) > 0)
-
-                            <div class="box box-success">
-                                <div class="box-header with-border">
-                                    <h3 class="box-title">Inbox</h3>
-                                </div>
-                                <div class="box-body">
-                                    <table class="table table-hover table-striped">
-                                        <tbody>
-                                            @foreach ($data->message as $message)
-                                                <tr>
-                                                        <td>
-                                                            <p>{!! '<small>' . $message->created_at->diffForHumans() . '</small>' .' : '.$message->description !!}</p>
-                                                        </td>
-
-
-                                                </tr>              
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="box-footer">
-                                        <p>Total Message: {{ count($data->message) }} </p>
-                                </div>
-                            </div>
-
-                @endif
-
-
-
-                
             </div>
-
         </div>
-
-
     </div>
+
+
+
+
+@include('closure.message')
+
+
 @stop
-
-
 
 @push('scripts')
     <script src="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>  

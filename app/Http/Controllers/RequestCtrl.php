@@ -5,6 +5,7 @@ namespace iloilofinest\Http\Controllers;
 use Illuminate\Http\Request;
 use iloilofinest\Models\Users;
 use iloilofinest\Models\RequestDocu;
+use iloilofinest\Models\Message;
 
 use Auth;
 use DB;
@@ -30,14 +31,26 @@ class RequestCtrl extends Controller
 
     public function create()
     {
-
         if ( Users::find(Auth::user()->id)->xstatus != 1){
              return redirect('request')->with('error',' Alumni record was not yet verified.');
         }
-
         return view('request.create');
     }
 
+    public function message(Request $request)
+    {
+        $this->validate($request,[
+            'message'=>'required|max:200',
+        ]);
+
+        $note = new Message();
+        $note->user_id = $request->user_id;
+        $note->request_id = $request->request_id;
+        $note->description = $request->message;
+        $note->save();
+        return redirect()->back()->with('success',' Message was successfully sent.');
+    }
+    
     public function store(Request $request)
     {
         $this->validate($request,[
@@ -66,10 +79,7 @@ class RequestCtrl extends Controller
     public function show($id)
     {
         $data = RequestDocu::findorfail($id);
-
-        // dd($data);
         return view('front.request_show',compact('data'));
-
     }
 
     public function edit($id)

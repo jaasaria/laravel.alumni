@@ -15,6 +15,8 @@ class Message extends Model
     	return $this->belongsTo(Users::class,'user_id');
     }
 
+   
+
     public function request(){
     	return $this->belongsTo(RequestDocu::class,'request_id');
     }

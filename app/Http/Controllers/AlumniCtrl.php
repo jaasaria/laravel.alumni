@@ -23,15 +23,15 @@ class AlumniCtrl extends Controller
         return view('alumni.list');
     }
 
-    public function create()
-    {
+    // public function create()
+    // {
 
-        if ( Users::find(Auth::user()->id)->xstatus != 1){
-             return redirect('request')->with('error',' Alumni record was not yet verified.');
-        }
+    //     if ( Users::find(Auth::user()->id)->xstatus != 1){
+    //          return redirect('request')->with('error',' Alumni record was not yet verified.');
+    //     }
 
-        return view('request.create');
-    }
+    //     return view('request.create');
+    // }
 
     public function store(Request $request)
     {
@@ -57,36 +57,25 @@ class AlumniCtrl extends Controller
         return redirect('request')->with('success',' Record was successfully saved.');
     }
 
-     public function message(Request $request)
+    public function message(Request $request)
     {
         $this->validate($request,[
             'message'=>'required|max:200',
         ]);
 
-
         $note = new Message();
-
         $note->user_id = $request->user_id;
         $note->request_id = $request->request_id;
-
         $note->description = $request->message;
         $note->save();
-
-        // return redirect('alumni')->with('success',' Message was successfully saved.');
-
         return redirect()->back()->with('success',' Message was successfully sent.');
-
     }
-
 
 
     public function show($id)
     {
         $data = RequestDocu::findorfail($id);
-
-        // dd($data);
         return view('front.request_show',compact('data'));
-
     }
 
     public function edit($id)
@@ -95,7 +84,6 @@ class AlumniCtrl extends Controller
         return view('alumni.create',compact('data'));
     }
     
-
     public function update(Request $request, $id)
     {
 
@@ -148,7 +136,7 @@ class AlumniCtrl extends Controller
 
 
        ->editColumn('fullname', function ($data) {
-                return ucwords($data->user->name . ' ' . $data->user->middlename . ' ' . $data->user->lastname) ;
+                return ucwords($data->user->fullname) ;
             })
 
         ->editColumn('title', ' 
