@@ -161,6 +161,8 @@ return [
         iloilofinest\Providers\EventServiceProvider::class,
         iloilofinest\Providers\RouteServiceProvider::class,
 
+        // iloilofinest\Providers\JaaServiceProvider::class,
+
         Intervention\Image\ImageServiceProvider::class,
 
     ],

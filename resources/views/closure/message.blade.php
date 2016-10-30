@@ -1,4 +1,4 @@
-
+@if (!empty($data))
     {{-- Message Panel --}}
     <div class="box box-success">
 
@@ -36,7 +36,7 @@
     </div>    
 
    
-@if (!empty($data))
+
     @if (count($data->message) > 0)
 
     <div class="box-header ui-sortable-handle"">
@@ -45,6 +45,7 @@
     </div>
 
         <ul class="timeline">
+
 
               @foreach ($data->message as $message)
 
@@ -65,7 +66,21 @@
                     </li>
 
                 @endforeach
+
+               
+
         </ul>
 
     @endif
 @endif
+
+
+
+
+@push('scripts')
+    <script>
+        $(function () {
+            $("#message").wysihtml5();
+        }); 
+    </script>  
+@endpush

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href=" {{ asset('dist/css/AdminLTE.min.css') }} ">
 
 
+
     <style type="text/css">      
 
             .logobox {
@@ -46,11 +47,11 @@
             }
 
             body {
-                background: url({{ asset('img/bg-login.jpg') }}) no-repeat center center fixed; 
+                background: url({!! asset('img/bglogin.jpg') !!}) no-repeat center center fixed; 
                   -webkit-background-size: cover;
                   -moz-background-size: cover;
                   -o-background-size: cover;
-                  background-size: cover;@import url();
+                  background-size: cover;
             }
 
 

@@ -20,5 +20,21 @@ class RequestDocu extends Model
 
     }
 
+// $ReqPending = RequestDocu::where('xstatus','=','0')->count();
+
+	public function getPendingAttribute() {
+
+ 		// return RequestDocu::where('xstatus','=','0')->count();
+ 		return RequestDocu::where('xstatus','=','0')->count();
+
+    }
+
+	public function Pending() {
+
+ 		return RequestDocu::where('xstatus','=','0')->count();
+
+    }
+
+
 }
 

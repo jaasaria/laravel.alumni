@@ -10,8 +10,7 @@
 
 
 @section("css.import")
-    <link rel="stylesheet" href=" {{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }} ">    
-
+   
     <style>
         textarea {
            resize: none;
@@ -31,9 +30,6 @@
         		<a href=" {{ route('request.list') }} " class="btn btn-success">Back</a>
         	</span>
         </div>
-
-
-
 
 
         <div class="row">
@@ -92,16 +88,10 @@
     </div>
 
 
-
 @include('closure.message')
 
 
 @stop
-
-
-
-
-
 
 @push('scripts')
     <script src="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>  

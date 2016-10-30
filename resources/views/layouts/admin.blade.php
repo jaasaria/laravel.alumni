@@ -27,10 +27,12 @@
     
     <link rel="stylesheet" href=" {{ asset('dist/css/bootstrap-select.min.css') }} ">
     <link rel="stylesheet" href=" {{ asset('plugins/datepicker/datepicker3.css') }} ">
-
+    <link rel="stylesheet" href=" {{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }} ">  
 
     {{-- datatable print button --}}
     <link rel="stylesheet" href=" {{ asset('css/buttons.dataTables.min.css') }} ">
+
+
 
 
     @yield('css.import')
@@ -106,6 +108,8 @@
 
 <script src=" {{ asset('dist/js/bootstrap-select.min.js') }}"></script>
 <script src=" {{ asset('plugins/datepicker/bootstrap-datepicker.js') }}"></script>
+
+<script src="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>  
 
 
 {{-- datatable print button --}}

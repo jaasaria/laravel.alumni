@@ -4,6 +4,9 @@ namespace iloilofinest\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use iloilofinest\Models\RequestDocu;
+
+
 use iloilofinest\Http\Requests;
 
 class PagesCtrl extends Controller
@@ -36,8 +39,14 @@ class PagesCtrl extends Controller
 
     public function admin()
     {
+        // $ReqPending = RequestDocu::where('xstatus','=','0')->count();
+        // $ReqClosed = RequestDocu::where('xstatus','=','1')->count();
+        //,compact('ReqPending','ReqClosed')
+        
         return view('pages.home');
     }
+ 
+
     public function settings()
     {
         return view('pages.settings');

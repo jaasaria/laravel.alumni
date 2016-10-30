@@ -7,7 +7,7 @@
                 <img src="{{ asset('upload/avatars/' . Auth::user()->avatar) }}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info ">
-                <p>{{ Auth::user()->name  }}</p>
+                <p>{{ Auth::user()->fullname  }}</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -32,11 +32,21 @@
 
             @if (auth::user()->role != 'admin')
                 <li class="{{ Request::is('request') ? 'active' : '' }}"><a href="{{ url('request') }}"><i class="fa fa-ticket"></i> Academic Request</a></li>
+
+
+
             @else
 
-                <li class="{{ Request::is('alumni') ? 'active' : '' }}"><a href="{{ url('alumni') }}"><i class="fa fa-users "></i> Alumni Request</a></li>
+                <li class="{{ Request::is('alumni') ? 'active' : '' }}"><a href="{{ url('alumni') }}"><i class="fa fa-users "></i> Alumni Request
+                    <span class="pull-right-container">
+                        <small class="label pull-right bg-red"> 1</small> {{-- {{ $ReqPending }} --}}
+                        <small class="label pull-right bg-blue"> 2 </small>  {{-- {{ $ReqClosed }} --}}
+                    </span>
+                    </a>
+                </li>
 
-                <li class="{{ Request::is('activity') ? 'active' : '' }}"><a href="{{ url('activity') }}"><i class="fa fa-ticket"></i> Activities and Events</a></li>
+
+                <li class="{{ Request::is('activity') ? 'active' : '' }}"><a href="{{ url('activity') }}"><i class="fa fa-ticket"></i> Activities & Events</a></li>
 
                 <li class="{{ Request::is('jobs') ? 'active' : '' }}"><a href="{{ url('jobs') }}"><i class="fa fa-briefcase"></i> Jobs</a></li>
 
