@@ -2,23 +2,20 @@
 
 Route::get('/',['uses' => 'PagesCtrl@home','as' => 'front.home']);
 Route::get('/home',['uses' => 'PagesCtrl@home','as' => 'front.home']);
-
 Route::get('/about',['uses' => 'PagesCtrl@about','as' => 'front.about']);
 Route::get('/vision',['uses' => 'PagesCtrl@vision','as' => 'front.vision']);
+
 Route::get('/hymn',['uses' => 'PagesCtrl@hymn','as' => 'front.hymn']);
+
 Route::get('/academic',['uses' => 'PagesCtrl@academic','as' => 'front.academic']);
+Route::get('/academic/show/{data}', ['uses' => 'PagesCtrl@academic_show','as' => 'front.academic.show']);
+
 Route::get('/contact',['uses' => 'PagesCtrl@contact','as' => 'front.contact']);
 
 Route::get('/list_jobs',['uses' => 'JobsCtrl@list_jobs','as' => 'front.list_jobs']);
 Route::get('/list_jobs/show/{id}', ['uses' => 'JobsCtrl@show','as' => 'front.show']);
-
 Route::get('/list_activity',['uses' => 'ActivityCtrl@list_activity','as' => 'front.list_activity']);
 Route::get('/list_activity/show/{id}', ['uses' => 'ActivityCtrl@show','as' => 'front.activity.show']);
-
-
-
-
-
 
 
 // Alumni Request - view by admin

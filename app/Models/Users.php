@@ -28,6 +28,15 @@ class Users extends Model
 
 
 
+// other than id , call slug
+// public function getRouteKeyName()
+// {
+//     return 'slug';
+// }
+
+
+
+
 	public function getFullNameAttribute() {
         return ucfirst($this->name) . ' ' . ucfirst($this->middlename). ' ' . ucfirst($this->lastname);
     }

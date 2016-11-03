@@ -38,10 +38,10 @@
             @else
 
                 <li class="{{ Request::is('alumni') ? 'active' : '' }}"><a href="{{ url('alumni') }}"><i class="fa fa-users "></i> Alumni Request
-                    <span class="pull-right-container">
-                        <small class="label pull-right bg-red"> 1</small> {{-- {{ $ReqPending }} --}}
-                        <small class="label pull-right bg-blue"> 2 </small>  {{-- {{ $ReqClosed }} --}}
-                    </span>
+                   {{--  <span class="pull-right-container">
+                        <small class="label pull-right bg-red"> 1</small> 
+                        <small class="label pull-right bg-blue"> 2 </small>  
+                    </span> --}}
                     </a>
                 </li>
 

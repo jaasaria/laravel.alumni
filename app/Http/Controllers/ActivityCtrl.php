@@ -155,7 +155,7 @@ class ActivityCtrl extends Controller
     }
 
     public function list_activity(){
-        $datas  = Activity::whereIn('xstatus',array(1))->get()->sortbydesc('created_at');
+        $datas  = Activity::Where('xstatus','1')->orderby('created_at','desc')->paginate(5);
         return view('front.activity',compact('datas'));
      
     }

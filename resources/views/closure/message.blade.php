@@ -55,7 +55,9 @@
                             <h3 class="timeline-header"><a href="#"> {{ $message->user->fullname }} </a></h3>
 
                             <div class="timeline-body">
-                                {!! html_entity_decode($message->description) !!} 
+                                <article>
+                                    {!! html_entity_decode($message->description) !!} 
+                                </article>
                             </div>
 
                             <div class="timeline-footer">

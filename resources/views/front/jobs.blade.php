@@ -54,8 +54,9 @@
 
                                     
                                     <p id="description">
-                                        <p>{!! $data->description !!}</p>
+                                        <p>{!! str_limit($data->description,1000) !!}</p>
                                     </p>
+
                                 <p class="additional-post-wrap">
                                     <span class="additional-post">
                                         <i class="livicon" data-name="user" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i> By&nbsp;{{ $data->user->name }}
@@ -73,6 +74,11 @@
                             </div>
 
                         @endforeach
+
+                        {!! $datas->render() !!}
+
+                        <br>
+                        <br>
                 </div>
 
 
@@ -87,7 +93,10 @@
 
                             <li class="media">
 
-<div class="fb-page" data-href="https://www.facebook.com/Interface-Computer-College-Iloilo-City-856751671058684/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/Interface-Computer-College-Iloilo-City-856751671058684/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Interface-Computer-College-Iloilo-City-856751671058684/">Interface Computer College - Iloilo City</a></blockquote></div>
+                                <div class="fb-page" data-href="https://www.facebook.com/Interface-Computer-College-Iloilo-City-856751671058684/" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false">
+
+   <blockquote cite="https://www.facebook.com/Interface-Computer-College-Iloilo-City-856751671058684/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Interface-Computer-College-Iloilo-City-856751671058684/">Interface Computer College - Iloilo City</a></blockquote>
+</div>
 
                                 <hr>
 

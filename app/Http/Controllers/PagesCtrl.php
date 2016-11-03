@@ -5,7 +5,7 @@ namespace iloilofinest\Http\Controllers;
 use Illuminate\Http\Request;
 
 use iloilofinest\Models\RequestDocu;
-
+use Config;
 
 use iloilofinest\Http\Requests;
 
@@ -77,8 +77,31 @@ class PagesCtrl extends Controller
     }
     public function academic()
     {
-        return view('front.academic');
+
+        $OA = Config::get('constants.academic.oa');
+        $BA = Config::get('constants.academic.ba');
+        $CS =  Config::get('constants.academic.cs');
+        $IT =  Config::get('constants.academic.it');
+        $CE =  Config::get('constants.academic.ce');
+        return view('front.academic',compact('OA','BA','CS','IT','CE'));
     }
+
+    public function academic_show($data)
+    {
+
+        // dd($data);
+        // $title = $data['title'] 
+        // $description = $data['description']
+
+        // $data = array(
+        //     'title'  => $data['title'],
+        //     'description' => $data['description']
+        // );
+
+        return view('front.academic_show',compact('data'));
+    }
+    
+
     public function contact(){
         return view('front.contact');
     }

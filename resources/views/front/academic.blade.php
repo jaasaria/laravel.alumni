@@ -53,8 +53,8 @@
                         </div>
                         <div class="info">
                             <h3 class="success text-center">BS in Office Administration</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!</p>
-                            <div class="text-right primary"><a href="#">Read more</a>
+                            <p> {!! str_limit($OA,300)  !!}</p>
+                            <div class="text-right primary"><a href=" {{ url('/academic/show', $OA ) }} ">Read more</a>
                             </div>
                         </div>
                     </div>
@@ -69,8 +69,8 @@
                         </div>
                         <div class="info">
                             <h3 class="primary text-center">BS in Business Administration</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!</p>
-                            <div class="text-right primary"><a href="#">Read more</a>
+                            <p> {!! str_limit($BA,300)  !!}</p>
+                            <div class="text-right primary"><a href=" {{ url('/academic/show',$BA) }} ">Read more</a>
                             </div>
                         </div>
                     </div>
@@ -85,8 +85,8 @@
                         </div>
                         <div class="info">
                             <h3 class="success text-center">BS in Computer Science</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!</p>
-                            <div class="text-right primary"><a href="#">Read more</a>
+                            <p> {!! str_limit($CS,300)  !!}</p>
+                            <div class="text-right primary"><a href="{{ url('/academic/show', $CS ) }}">Read more</a>
                             </div>
                         </div>
                     </div>
@@ -101,8 +101,8 @@
                         </div>
                         <div class="info">
                             <h3 class="primary text-center">BS in Information Technology</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!</p>
-                            <div class="text-right primary"><a href="#">Read more</a>
+                            <p> {!! str_limit($IT,300)  !!}</p>
+                            <div class="text-right primary"><a href="{{ url('/academic/show', $IT ) }}">Read more</a>
                             </div>
                         </div>
                     </div>
@@ -118,8 +118,8 @@
                         </div>
                         <div class="info">
                             <h3 class="success text-center">BS in Computer Engineering</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti atque, tenetur quam aspernatur corporis at explicabo nulla dolore necessitatibus doloremque exercitationem sequi dolorem architecto perferendis quas aperiam debitis dolor soluta!</p>
-                            <div class="text-right primary"><a href="#">Read more</a>
+                            <p> {!! str_limit($CE,300)  !!}</p>
+                            <div class="text-right primary"><a href="{{ url('/academic/show', $CE ) }}">Read more</a>
                             </div>
                         </div>
                     </div>

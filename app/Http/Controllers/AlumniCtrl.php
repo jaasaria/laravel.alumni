@@ -23,16 +23,6 @@ class AlumniCtrl extends Controller
         return view('alumni.list');
     }
 
-    // public function create()
-    // {
-
-    //     if ( Users::find(Auth::user()->id)->xstatus != 1){
-    //          return redirect('request')->with('error',' Alumni record was not yet verified.');
-    //     }
-
-    //     return view('request.create');
-    // }
-
     public function store(Request $request)
     {
         $this->validate($request,[
@@ -60,7 +50,7 @@ class AlumniCtrl extends Controller
     public function message(Request $request)
     {
         $this->validate($request,[
-            'message'=>'required|max:200',
+            'message'=>'required',
         ]);
 
         $note = new Message();

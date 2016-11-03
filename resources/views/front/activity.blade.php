@@ -74,6 +74,11 @@
                             </div>
 
                         @endforeach
+
+                        {!! $datas->render() !!}
+                        <br>
+                        <br>
+
                 </div>
 
 

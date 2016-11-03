@@ -150,9 +150,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
 
 
-        Yajra\Datatables\DatatablesServiceProvider::class,
-
-
+    
         /*
          * Application Service Providers...
          */
@@ -161,8 +159,7 @@ return [
         iloilofinest\Providers\EventServiceProvider::class,
         iloilofinest\Providers\RouteServiceProvider::class,
 
-        // iloilofinest\Providers\JaaServiceProvider::class,
-
+        Yajra\Datatables\DatatablesServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
     ],
@@ -214,7 +211,7 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
-        'dbfunction' => App\Helpers\dbfunction::class,  //personal class
+        'dbfunction' => App\Helpers\dbfunction::class,                      //personal class
         'Image' => Intervention\Image\Facades\Image::class,
 
     ],
