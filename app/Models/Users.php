@@ -15,6 +15,7 @@ class Users extends Model
     protected $fillable = ['name','address','mobile','citizenship','designation','email','note','avatar','middlename','lastname','campus','program','yeargraduated','companyname','companyadd','created_at'];
 
 
+    
 	protected $dates = ['yeargraduated'];
 
 	 // public function getDateOfBirthAttribute($value)

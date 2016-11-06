@@ -34,6 +34,7 @@
 
     <!-- Slider Section Start -->
         <div class="row">
+
             <!-- Left Heading Section Start -->
             <div class="col-md-12 col-sm-12 wow bounceInLeft" data-wow-duration="5s">
                 <h2><label>A BRIEF HISTORY</label></h2>

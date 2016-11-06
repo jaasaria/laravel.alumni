@@ -16,22 +16,6 @@
         <ul class="nav navbar-nav">
 
 
-          {{-- 
-          <li class="dropdown messages-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="label label-success">4</span>
-              </a>
-          </li>
-          <li class="dropdown1 messages-menu1">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-sticky-note-o"></i>
-                    <span class="label label-success">4</span>
-              </a>
-          </li> --}}
-
-
-
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src=" {{  asset('upload/avatars/' . Auth::user()->avatar)  }}" class="user-image" alt="User Image">

@@ -46,33 +46,37 @@
 
         <ul class="timeline">
 
+                  @foreach ($messages as $message)
 
-              @foreach ($data->message as $message)
+                      <li>
+                          <div class="timeline-item">
+                              <span class="time"><i class="fa fa-clock-o"></i> {{ $message->created_at->diffForHumans() }}</span>
 
-                    <li>
-                        <div class="timeline-item">
-                            <span class="time"><i class="fa fa-clock-o"></i> {{ $message->created_at->diffForHumans() }}</span>
-                            <h3 class="timeline-header"><a href="#"> {{ $message->user->fullname }} </a></h3>
+                              <img src=" {{  asset('upload/avatars/' . $message->user->avatar)  }}" class="img-circle img-sm">
+                              <h3 class="timeline-header"><a href="#"> {{ $message->user->fullname }} </a></h3>
 
-                            <div class="timeline-body">
-                                <article>
-                                    {!! html_entity_decode($message->description) !!} 
-                                </article>
-                            </div>
+                              <div class="timeline-body">
+                                  <article>
+                                      {!! html_entity_decode($message->description) !!}
+                                  </article>
+                              </div>
 
-                            <div class="timeline-footer">
-                                <a class="btn btn-success btn-xs">Read more</a>
-                            </div> 
+                              <div class="timeline-footer">
+                                  <a class="btn btn-success btn-xs">Read more</a>
+                              </div>
 
-                        </div>
-                    </li>
+                          </div>
+                      </li>
 
-                @endforeach
+                  @endforeach
 
-               
+            <li>
+                <div class="timeline-item text-center">
+                    {!! $messages->render() !!}
+                </div>
+            </li>
 
         </ul>
-
     @endif
 @endif
 

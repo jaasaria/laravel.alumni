@@ -36,29 +36,30 @@
 
                             <li>
                                 @if(Auth::check())
-                                    
+
                                     <div class="dropdown">
                                         <i class="livicon" data-name="user" data-size="18" data-loop="true" data-c="#fff" data-hc="#fff">
                                             <label class="hidden-xs"><a href="#" class="text-white">
-                                            Signed in as <b>{{ Auth::user()->name }}</b>
-                                            <span class="caret"></span>
+                                                    Signed in as <b>{{ Auth::user()->fullname }}</b>
+                                                    <span class="caret"></span>
                                             </label>
-                                            </a></i>
+                                            </a>
+                                        </i>
 
-                                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-                                              <li role="presentation"><a role="menuitem" tabindex="-1" href=" {{ route('admin.home')}} ">Admin Panel</a></li>
-                                              <li role="presentation" class="divider"></li>
-                                              <li role="presentation"><a role="menuitem" tabindex="-1" href=" {{ route('user.signout')}} ">Sign Out</a></li>
-                                            </ul>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" href=" {{ route('admin.home')}} ">Admin Panel</a></li>
+                                            <li role="presentation" class="divider"></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1" href=" {{ route('user.signout')}} ">Sign Out</a></li>
+                                        </ul>
                                     </div>
-
+                                    
                                 @else
-                                    <a href="#"><i class="livicon" data-name="user" data-size="18" data-loop="true" data-c="#fff" data-hc="#fff"></i></a>
-                                <label class="hidden-xs"><a href="{{route('user.login')}}" class="text-white">Login</a></label>
+                                    <a href="{{route('user.login')}}"><i class="livicon" data-name="user" data-size="18" data-loop="true" data-c="#fff" data-hc="#fff"></i></a>
+                                    <label class="hidden-xs"><a href="{{route('user.login')}}" class="text-white">Login</a></label>
                                 @endif
                             </li>
 
-                          
+
 
 
 

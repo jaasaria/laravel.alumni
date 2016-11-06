@@ -71,7 +71,9 @@ class AlumniCtrl extends Controller
     public function edit($id)
     {
         $data = RequestDocu::findorfail($id);
-        return view('alumni.create',compact('data'));
+        $messages = $data->message()->orderby('created_at','desc')->paginate(5);
+
+        return view('alumni.create',compact('data','messages'));
     }
     
     public function update(Request $request, $id)

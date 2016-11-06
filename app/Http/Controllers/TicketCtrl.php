@@ -32,7 +32,7 @@ class TicketCtrl extends Controller
     {
         $ticket = ticket::find($id);
 
-        $reply  = $ticket->reply()
+        $reply  = $ticket->reply();
         return view('ticket.read',compact('ticket'));      
     }
 

@@ -20,12 +20,10 @@ class ActivityCtrl extends Controller
     {
         return view('activity.list');
     }
-
     public function create()
     {
         return view('activity.create');
     }
-
     public function store(Request $request)
     {
         $this->validate($request,[
