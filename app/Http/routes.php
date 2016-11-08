@@ -104,19 +104,6 @@ Route::group(['middleware' => 'auth','prefix' => 'profile'],function(){
 
 
 
-//NOTES
-Route::group(['middleware' => 'auth','prefix' => 'notes'],function(){
-	Route::get('/', ['uses' => 'NoteCtrl@index','as' => 'note_list']);
-	Route::get('/create', ['uses' => 'NoteCtrl@create','as' => 'note_create']);
-	Route::post('/store', ['uses' => 'NoteCtrl@store','as' => 'note_store']);
-	Route::get('/edit/{id}', ['uses' => 'NoteCtrl@edit','as' => 'note_edit']);
-	Route::post('/update/{id}', ['uses' => 'NoteCtrl@update','as' => 'note_update']);
-	Route::get('/destroy/{id}', ['uses' => 'NoteCtrl@destroy','as' => 'note_destroy']);
-	Route::delete('/delete', ['uses' => 'NoteCtrl@delete','as' => 'note_delete']);
-	Route::get('/get_all_data', ['uses' => 'NoteCtrl@get_all_data','as' => 'get_all_data']); //json format - use only for fetching note data
-});
-
-
 Route::get('/admin',   ['middleware' => 'auth','uses' => 'PagesCtrl@admin','as' => 'admin.home']);
 
 
@@ -124,7 +111,6 @@ Route::get('/admin',   ['middleware' => 'auth','uses' => 'PagesCtrl@admin','as' 
 Route::get('user/login', ['uses'=>'Auth\AuthController@showLoginForm','as' => 'user.login'] );
 Route::post('user/login', 'Auth\AuthController@login');
 Route::get('user/logout', ['uses'=>'Auth\AuthController@logout','as' => 'user.signout']);
-
 
 
 // Registration Routes...

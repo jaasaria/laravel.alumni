@@ -3,9 +3,11 @@
 namespace iloilofinest;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+// use iloilofinest\Models\Users;
 
 class User extends Authenticatable
 {
+    // use Authenticatable;
     /**
      * The attributes that are mass assignable.
      *
@@ -23,4 +25,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    //double entries from USERS class -> need to fix this 
+    public function getFullNameAttribute() {
+        return ucwords($this->name) . ' ' . ucwords($this->middlename). ' ' . ucwords($this->lastname);
+    }
+
+
 }

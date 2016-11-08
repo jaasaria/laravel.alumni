@@ -1,17 +1,24 @@
 <?php
 
 namespace App\Helpers;
-use DB;
+
+use iloilofinest\Models\UserLog;
 
 class dbfunction
 {
 
     public static function insertlogs($id, $task){
-        DB::insert('insert into user_logs (user_id, task) values (?, ?)',[$id,$task]);
+
+        UserLog::create([
+        	'user_id'=> $id,
+        	'task'=> $task,
+        	]);
+        
+
     }
 
 
-    
+
 
 
 }

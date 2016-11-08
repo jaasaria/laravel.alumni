@@ -7,8 +7,8 @@
                 <img src="{{ asset('upload/avatars/' . Auth::user()->avatar) }}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info ">
-                <p>{{ Auth::user()->fullname  }}</p>
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <p><small>{{ Auth::user()->fullname  }}</small></p>
+                <small ><i class="fa fa-circle text-success"></i> Online</small>
             </div>
         </div>
 

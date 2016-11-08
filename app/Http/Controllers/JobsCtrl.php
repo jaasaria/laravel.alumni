@@ -119,7 +119,7 @@ class JobsCtrl extends Controller
                             <div class="btn-group">
                                 <a href="'. route('jobs.edit',$data->id) .'" type="btn" class="btn btn-warning"><i class="fa fa-pencil-square"></i></a>
 
-                                <button id="btndelete" class="btn btn-danger" data-docid='. $data->id .'  data-href="'. route('note_destroy', $data->id ) .'" ><i class="fa fa-trash-o"></i></button>
+                                <button id="btndelete" class="btn btn-danger" data-docid='. $data->id .'  data-href="'. route('jobs.destroy', $data->id ) .'" ><i class="fa fa-trash-o"></i></button>
                             </div>
                         </div>
                         ';

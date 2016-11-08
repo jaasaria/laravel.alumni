@@ -12,10 +12,10 @@ class Users extends Model
 {
     
     protected $table = 'users';
-    protected $fillable = ['name','address','mobile','citizenship','designation','email','note','avatar','middlename','lastname','campus','program','yeargraduated','companyname','companyadd','created_at'];
+    protected $fillable = ['name','address','mobile','citizenship','designation','email','note','avatar','middlename','lastname','campus','program','yeargraduated','companyname','companyadd','created_at', 'email', 'password'];
 
 
-    
+  
 	protected $dates = ['yeargraduated'];
 
 	 // public function getDateOfBirthAttribute($value)
@@ -35,11 +35,13 @@ class Users extends Model
 //     return 'slug';
 // }
 
-
+ protected $hidden = [
+        'password', 'remember_token',
+    ];
 
 
 	public function getFullNameAttribute() {
-        return ucfirst($this->name) . ' ' . ucfirst($this->middlename). ' ' . ucfirst($this->lastname);
+        return ucwords($this->name) . ' ' . ucwords($this->middlename). ' ' . ucwords($this->lastname);
     }
 
 	public function scopeAlumni($query)

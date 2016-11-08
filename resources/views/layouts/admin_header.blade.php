@@ -27,7 +27,7 @@
                   <li class="user-header">
                     <img src="{{ asset('upload/avatars/' . Auth::user()->avatar) }}" class="img-circle" alt="User Image">
                     <p>
-                          {{ Auth::user()->name }}
+                          {{ Auth::user()->fullname }}
                           <br>
                           <small>{{ Auth::user()->designation }}</small>
                           <small>Member since {{  date('Y', strtotime( Auth::user()->created_at)) .' - '. ucfirst(Auth::user()->role) }}</small>

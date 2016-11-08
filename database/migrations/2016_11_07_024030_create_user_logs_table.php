@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNotes extends Migration
+class CreateUserLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,14 @@ class CreateNotes extends Migration
      */
     public function up()
     {
-            Schema::create('notes', function (Blueprint $table) {
+        Schema::create('tbl_user_logs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('notes');
-            $table->string('xstatus');
+            $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->string('task')->nullable(false);
             $table->timestamps();
         });
-
     }
 
     /**
@@ -29,6 +29,6 @@ class CreateNotes extends Migration
      */
     public function down()
     {
-         Schema::drop('notes');
+        Schema::dropIfExists('tbl_user_logs');
     }
 }
