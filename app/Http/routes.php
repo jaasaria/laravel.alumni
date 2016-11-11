@@ -15,6 +15,16 @@ Route::get('/list_activity',['uses' => 'ActivityCtrl@list_activity','as' => 'fro
 Route::get('/list_activity/show/{id}', ['uses' => 'ActivityCtrl@show','as' => 'front.activity.show']);
 
 
+Route::get('/auth/redirect/{provider}', ['uses' => 'SocialiteCtrl@redirect_facebook','as' => 'auth.facebook']);
+Route::get('/auth/callback/{provider}', ['uses' => 'SocialiteCtrl@callback_facebook','as' => 'auth.facebookcall']);
+
+
+// Route::get('/auth/facebook', ['uses' => 'SocialiteCtrl@redirect_facebook','as' => 'auth.facebook']);
+// Route::get('/auth/facebook/callback', ['uses' => 'SocialiteCtrl@callback_facebook','as' => 'auth.facebookcall']);
+
+// Route::get('/auth/twitter', ['uses' => 'SocialiteCtrl@redirect_twitter','as' => 'auth.twitter']);
+// Route::get('/auth/twitter/callback', ['uses' => 'SocialiteCtrl@callback_twitter']);
+
 
 //Route::group(['middleware' => 'Admin'],function(){
 //});
@@ -98,7 +108,7 @@ Route::group(['middleware' => 'auth','prefix' => 'profile'],function(){
 	Route::post('/storeprofile', ['uses' => 'ProfileCtrl@storeprofile','as' => 'profile.storeprofile']);
 	Route::post('/storeemail', ['uses' => 'ProfileCtrl@storeemail','as' => 'profile.storeemail']);
 	Route::post('/storepassword', ['uses' => 'ProfileCtrl@storepassword','as' => 'profile.storepassword']);
-	Route::get('/get_all_logs', ['uses' => 'ProfileCtrl@get_all_logs','as' => 'get_all_logs']);
+	Route::get('/profilelogs', ['uses' => 'ProfileCtrl@profilelogs','as' => 'profile.logs']);
 	Route::post('/deleteimage', ['uses' => 'ProfileCtrl@deleteimage','as' => 'profile.deleteimage']);
 });
 

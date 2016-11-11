@@ -11,7 +11,9 @@
         "yajra/laravel-datatables-oracle": "^6.16",
         "intervention/image": "^2.3",
         "nesbot/carbon": "^1.21",
-        "barryvdh/laravel-ide-helper": "^2.2"
+        "barryvdh/laravel-ide-helper": "^2.2",
+        "laravel/socialite": "^2.0"
+        
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

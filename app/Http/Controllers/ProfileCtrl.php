@@ -38,8 +38,11 @@ class ProfileCtrl extends Controller
     public function index()
     {
         $id =  Auth::user()->id;
-        $profile = Profile::find($id);
-        return view('profile.profile')->with('profile',$profile); 
+        $profile = Profile::findorfail($id);
+
+        // return view('profile.profile')->with('profile',$profile); 
+        return view('profile.profile',compact('profile')); 
+
     }
 
     public function messages()
@@ -348,11 +351,13 @@ class ProfileCtrl extends Controller
 
 
 
-    public function get_all_logs()
+    public function profilelogs()
     {
 
 
-    $table = Users::find(Auth::user()->id)->userlog;
+    // $table = Users::find(Auth::user()->id)->userlog;
+        
+    $table = Auth::user()->userlog;
 
     return Datatables::of($table)
     ->editColumn('created_at', ' 

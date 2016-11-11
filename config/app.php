@@ -162,6 +162,9 @@ return [
         Yajra\Datatables\DatatablesServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
+        Laravel\Socialite\SocialiteServiceProvider::class,
+
+
     ],
 
     /*
@@ -213,6 +216,9 @@ return [
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
         'dbfunction' => App\Helpers\dbfunction::class,                      //personal class
         'Image' => Intervention\Image\Facades\Image::class,
+
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        
 
     ],
 

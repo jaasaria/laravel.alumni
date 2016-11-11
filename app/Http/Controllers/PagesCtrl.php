@@ -3,11 +3,12 @@
 namespace iloilofinest\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use iloilofinest\Models\RequestDocu;
 use Config;
 
 use iloilofinest\Http\Requests;
+use Socialite;
+
 
 class PagesCtrl extends Controller
 {

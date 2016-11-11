@@ -3,7 +3,7 @@
 namespace iloilofinest;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
-// use iloilofinest\Models\Users;
+use iloilofinest\Models\UserLog;
 
 class User extends Authenticatable
 {
@@ -31,6 +31,11 @@ class User extends Authenticatable
     public function getFullNameAttribute() {
         return ucwords($this->name) . ' ' . ucwords($this->middlename). ' ' . ucwords($this->lastname);
     }
+
+    public function userlog(){
+        return $this->hasMany(UserLog::class,'user_id');
+    }
+    
 
 
 }

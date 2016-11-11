@@ -18,7 +18,6 @@
 @section('content')
         <div class="row">
 
-
         	{{-- left panel --}}
             <div class="col-md-3">
               	<div class="box box-primary">
@@ -219,7 +218,7 @@
 			                        </div>
 
 
-
+							
 			                       	{{-- job title --}}
 			                        <div class="form-group  has-feedback {{ $errors->has('designation') ? ' has-error' : '' }}">
 			                            <label for="position" class="col-sm-2 control-label">Job Title</label>
@@ -230,9 +229,6 @@
 			                        </div>
 
 
-
-
-			                     	
 									{{-- notes --}}
 			                        <div class="form-group has-feedback {{ $errors->has('notes') ? ' has-error' : ''}} ">
 			                            <label for="notes" class="col-sm-2 control-label">Notes</label>
@@ -241,8 +237,6 @@
 			                            </div>
 			                             <small class="text-danger">{{ $errors->first('notes') }}</small>
 			                        </div>
-
-
 
 			                        <div class="form-group">
 			                            <div class="col-sm-offset-2 col-sm-10">
@@ -253,6 +247,7 @@
 
 
 		                </div>
+
 
 		                <div class="{{ (Session::has('tab') ? 'active':'') }} tab-pane" id="account">
 		                        <div class="box">
@@ -352,7 +347,6 @@
 		
 
 	{{-- </div> --}}
-
 {!! Form::close() !!}
 
 
@@ -363,7 +357,6 @@
 
 		                        </div><!-- /.box -->
 		                </div>
-
 	                    <div class="tab-pane" id="activity">
 	                        <div class="box">
 		                        <div class="box-header">
@@ -389,8 +382,8 @@
 	                        </div><!-- /.box -->
 	                    </div>
 
-	                </div>
 
+	                </div>
               	</div>
             </div>
 @stop
@@ -400,30 +393,23 @@
 @push('scripts')
 <script>
 
-	$(function () {
-	    $('#datepicker').datepicker({
+	$(document).ready(function(){
+
+		$('#datepicker').datepicker({
 	      autoclose: true
 	    });
 
 	    $('.selectpicker').selectpicker({
 		  size: 5
 		});
-	});
 
-
-
-
-
-	$(document).ready(function(){
 
  		$(function() {
-
-
             $('#tablelogs').DataTable({
                 processing: true,
                 searching:false,
                 serverSide: true,
-                ajax: '{!! route('get_all_logs') !!}',
+                ajax: '{!! url('profile/profilelogs') !!}',
                 order: [[0, 'desc']],
                 columns: [
                     { data: 'created_at', name: 'created_at'},
@@ -431,6 +417,9 @@
                 ]
             });
         });
+
+    
+
 
 
 

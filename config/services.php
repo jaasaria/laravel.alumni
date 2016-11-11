@@ -14,6 +14,8 @@ return [
     |
     */
 
+  
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),
@@ -34,5 +36,17 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+
+    'facebook' => [
+        'client_id' => '690134434476299',
+        'client_secret' => 'd69dcfbea30ebd771599bde9006db7ea',
+        'redirect' => 'http://localhost:8000/auth/callback/facebook',
+    ],
+    'twitter' => [
+        'client_id' => 'nTASTqqMJ4FsJZXp1v2kHXqvz',
+        'client_secret' => 'ELDm3evaUDjEobPrBbvHtBEML8BzDaKzsVBn0F5yCIzx3tAmC1',
+        'redirect' => 'http://localhost:8000/auth/callback/twitter',
+    ],
+
 
 ];
